@@ -51,7 +51,7 @@
     {
         "title": "Login",
         "icon": "bi-question-circle-fill",
-        "path": "/"
+        "path": "/login"
     },
     {
         "title": "Signup",

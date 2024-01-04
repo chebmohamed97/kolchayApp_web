@@ -6,8 +6,10 @@ import items from '../data/sidebar.json';
 import LogoImage from '../images/logo192.png';
 import { FaBars } from 'react-icons/fa';
 import '../styles/sidebar.css'
+import { useDeviceWidth } from '../contexts/WidthContext';
 
 export default function Sidebar() {
+  const { isMobile } = useDeviceWidth();
   const [isCollapsed, setCollapsed] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
 
@@ -16,6 +18,8 @@ export default function Sidebar() {
   };
 
   useEffect(() => {
+
+    setCollapsed(isMobile? true : false);
     const handleScroll = () => {
       setIsFixed(window.scrollY > 0);
     };
@@ -25,7 +29,7 @@ export default function Sidebar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className={`sidebar ${isFixed ? 'fixed' : ''} ${isCollapsed ? 'collapsed' : ''}`}>

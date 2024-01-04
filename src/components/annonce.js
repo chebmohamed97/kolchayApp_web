@@ -1,11 +1,12 @@
 import React from 'react';
 import '../styles/annonce.css';
+import ClickableText from './clickableText';
 
 export default function Annonce({ item}){
     return (
         <div className="annonce">
             <div className="titreAnnonce" >
-            {item.title}
+            <ClickableText id={item.idAnnonce} text={item.title} />
             </div>
             
             <div className="TypeDeService"> 
@@ -24,7 +25,7 @@ export default function Annonce({ item}){
                 {item.content}
             </div>
             <a href={item.idAnnonce || "#"} className="contacterAuteur">
-            {"Contacter l'auteur de l'annonce"}
+            {"Contacter"}
             </a>
             <div className="signalerAnnonce">
                 {"Signaler l'annonce"}

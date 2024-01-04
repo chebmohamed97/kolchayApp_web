@@ -1,17 +1,21 @@
 // src/Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { useAuth } from '../contexts/AuthContext';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const { isLoggedIn, login, logout } = useAuth();
   const navigate = useNavigate(); // Initialize navigate for navigation
 
   const handleLogin = () => {
     // Basic login check (replace with API call in a real application)
     if (username === 'user' && password === 'password') {
       // Redirect to the home page
+      login();
       navigate('/home');
     } else {
       // Failed login

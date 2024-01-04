@@ -1,5 +1,6 @@
 .sidebar{
-    width: 260px;
+    width: 15vw;
+    max-width: 260px;
     flex-shrink: 0;
     background-color: rgba(22, 22, 22, 1);
     height: 100%;
@@ -8,6 +9,8 @@
   
   
   .sidebar-item{
+    color: #fff;
+    font-size: 16px;
     padding: .75em 1em;
     display: block;
     transition: background-color .15s;
@@ -19,7 +22,7 @@
   
   .sidebar-title{
     display: flex;
-    font-size: 1.2em;
+    font-size: 16px;
     justify-content: space-between;
   }
   .sidebar-title span i{
@@ -34,7 +37,7 @@
     transform: rotate(180deg);
   }
   .sidebar-content{
-    padding-top: .25em;
+    padding-top: .5em;
     height: 0;
     overflow: hidden;
   }
@@ -64,7 +67,7 @@
   }
   
   .sidebar.collapsed {
-    width: 80px;
+    width: 15vh;
   }
   
   .logo-sidebar img {
@@ -80,10 +83,14 @@
   }
   
   .SideBarItemLogo{
-    padding: 30px;
+    padding: 10px;
     display: block;
-    transition: background-color .15s;
-    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    height: 50px;
+    width: auto;
   }
   .SideBarItemLogo:hover{
     background-color: rgba(255, 255, 255, .1);

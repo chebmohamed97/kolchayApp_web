@@ -10,7 +10,8 @@ import Profile from './pages/Profile';
 import Login from './pages/loginPage';
 import SignUp from './pages/Signup';
 import Details from './pages/Details';
-
+import PageAnnonce from './pages/pageAnnonce';
+import LogInStatus from './components/logInStatus';
 function App() {
   return (
     <Router>
@@ -19,7 +20,7 @@ function App() {
       <div className="container">
       <Routes>
             <Route path="/home" element={<Home/>} />
-            <Route path="/" element={<Login/>} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<SignUp/>} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/Categories" element={<Categories />} />
@@ -27,7 +28,9 @@ function App() {
             <Route path="/support" element={<Support />} />
             <Route path="/report-bug" element={<ReportBug />} />
             <Route path="/details" element={<Details />}/>
-          </Routes>
+
+            <Route path="/annonce/:id" element={<PageAnnonce />} />
+      </Routes>
       </div>
     </div>
     </Router>
