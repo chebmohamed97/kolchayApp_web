@@ -1,0 +1,148 @@
+.annonce{
+    display: inline-block;
+    color: #000;
+    margin-top: 30px;
+    margin-right: 20px;
+    border-radius: 25px;
+    background: #fff;
+    padding-left: 25px;
+    padding-top: 10px;
+    width: 48%;
+    font-size: 16px;
+    height: 300px;
+    outline: 4px solid #000;
+  }
+
+
+.titreAnnonce{
+  color: #000;
+  margin-top: 5px;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width:fit-content;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.AnnonceAuthor{
+  display: inline-block;
+  margin-left: 10px;
+  color: #000;
+  margin-top: 5px;
+  border-radius: 30px;
+  background: #fff;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width:fit-content;
+  font-weight: bold;
+  outline: 2px solid #000;
+}
+
+.TypeDeService{
+  display: inline-block;
+  color: #000;
+  margin-top: 5px;
+  margin-left: 10px;
+  border-radius: 30px;
+  background: #fff;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width:fit-content;
+  font-weight: bold;
+  outline: 2px solid #000;
+
+}
+
+.CategorieDuService{
+  display: inline-block;
+  color: #000;
+  margin-top: 5px;
+  margin-left: 10px;
+  border-radius: 30px;
+  background: #fff;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width:fit-content;
+  font-weight: bold;
+  outline: 2px solid #000;
+}
+
+.contenuAnnonce{
+  color: #000;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding-right: 20px;
+  margin-right: 10px;
+  height: 120px;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+.contacterAuteur{
+  display: inline-block;
+  color: #000;
+  margin-top: 20px;
+  margin-left: 40%;
+  border-radius: 30px;
+  background: #fff;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width:fit-content;
+  font-weight: bold;
+  outline: 4px solid #000;
+  text-decoration: none;
+}
+.contacterAuteur:hover{
+  background: #fff27f;
+}
+
+.signalerAnnonce{
+  display: inline-block;
+  color: #000;
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 30px;
+  background: #fff;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width:fit-content;
+  font-weight: bold;
+  outline: 4px solid #860000;
+}
+
+.RegionDuService{
+  display: inline-block;
+  color: #000;
+  margin-top: 5px;
+  margin-left: 10px;
+  border-radius: 30px;
+  background: #fff;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width:fit-content;
+  font-weight: bold;
+  outline: 2px solid #000;
+}
