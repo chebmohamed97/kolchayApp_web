@@ -76,7 +76,9 @@ body{
   display: flex;
   justify-content: space-between; /* Horizontal spacing */
   align-items: center; /* Vertical centering */
-  margin-right: 50px; /* Adjust the margin as needed */
+  margin-right: 30px; /* Adjust the margin as needed */
+  margin-top: 4px;
+  text-decoration: none;
 }
 
 .circle-container {
@@ -95,4 +97,7 @@ body{
   height: 100%;
   object-fit: cover; /* Maintain aspect ratio and cover the circle */
   border-radius: 50%; /* Ensure the image is also circular */
+}
+
+.logInLogoutBtn {
 }

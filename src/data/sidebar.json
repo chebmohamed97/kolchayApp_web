@@ -23,14 +23,4 @@
         "title": "Settings",
         "icon": "bi-gear-fill",
         "path": "/settings"
-    },
-    {
-        "title": "Login",
-        "icon": "bi-question-circle-fill",
-        "path": "/login"
-    },
-    {
-        "title": "Signup",
-        "icon": "bi-question-circle-fill",
-        "path": "/signup"
     }]
