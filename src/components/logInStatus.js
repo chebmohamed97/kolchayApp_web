@@ -32,8 +32,12 @@ export default function LogInStatus() {
         </div>
       ) : (
         <div>
-          <p> Guest</p>
-          <button onClick={() => navigate("/login")}>login</button>
+          <div>
+            <p className="logInStatus"> Guest</p>
+          </div>
+          <div>
+            <button onClick={() => navigate("/login")}>login</button>
+          </div>
         </div>
       )}
       <Link to="/profile">

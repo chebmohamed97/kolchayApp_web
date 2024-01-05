@@ -1,35 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useAuth } from "../contexts/AuthContext";
 import LogInStatus from "../components/logInStatus";
 
 const Profile = () => {
-  const { isLoggedIn, login, logout, currentUser } = useAuth();
+  const { isLoggedIn, currentUser } = useAuth();
+
+  if (!isLoggedIn) {
+    return (
+      <div>
+        <LogInStatus />
+        <p>You are not logged in</p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <LogInStatus />
       <h2>Profile</h2>
-      <p> Name: {currentUser.displayName} </p>
-      <p> Email: {currentUser.email} </p>
+      <p>Name: {currentUser.displayName}</p>
+      <p>Email: {currentUser.email}</p>
       <p>
-        {" "}
         Email Verification:{" "}
         {currentUser.emailVerified ? (
-          <t> Verified </t>
+          <span>Verified</span>
         ) : (
-          <t> Not Verified </t>
-        )}{" "}
+          <span>Not Verified</span>
+        )}
       </p>
       <p>
-        {" "}
         Phone number:{" "}
         {currentUser.phoneNumber ? (
-          <t> Unknown </t>
+          <span>{currentUser.phoneNumber}</span>
         ) : (
-          <t> {currentUser.phoneNumber} </t>
-        )}{" "}
+          <span>Unknown</span>
+        )}
       </p>
-      <p> Account created: {currentUser.metadata.creationTime}</p>
-      <p> Last login: {currentUser.metadata.lastSignInTime}</p>
+      <p>Account created: {currentUser.metadata?.creationTime || "N/A"}</p>
+      <p>Last login: {currentUser.metadata?.lastSignInTime || "N/A"}</p>
     </div>
   );
 };

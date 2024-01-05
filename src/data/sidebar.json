@@ -2,7 +2,7 @@
     {
         "title": "Home",
         "icon": "bi-house-fill",
-        "path" : "/home"
+        "path" : "/"
     },
     {
         "title": "Profile",
