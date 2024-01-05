@@ -14,26 +14,28 @@ body{
 }
 
 .main{
-  display: flex;
-  height: 100vh;
 }
 
 
 .container{
-  flex-grow: 1;
-  padding: 2em;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
+  margin-left: 2vh;
+  margin-right: 2vh;
 }
 .HomeHeader{
+  width: auto;
   color: #000;
-  text-align: center;
+  text-align: left;
   font-size: 40px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 .title{
   font-size: 3em;
+}
+
+.inlineblocks{
+  display: block;
 }
 .info{
   font-size: 1.1em;
@@ -66,13 +68,114 @@ body{
 }
 
 .filterBar{
-  display: inline-block;
-  margin-right: 10px;
-  color: #000
+  margin-top: 15px;
+  padding: 5px 10px;
+  display: flex;
+  margin-right: 60px;
+  color: #000;
+  font-size: 16px;
+  justify-content: center;
+  text-align: center;
 }
 
-.logInStatus{
-  text-align: right;
-  margin-left: 90%;
+
+.LogoTopLeft{
+  width: 10%;
+  height: 10%;
+  float: left;
+}
+
+.topbar {
+  display: inline;
   width: fit-content;
+  max-width: 65%;
+  background-color: #fff;
+  padding-top: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.topbarItem{
+  padding: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  width: fit-content;
+  border-radius: 20%;
+}
+
+.topbarItem:hover{
+  background-color: #fff;
+  outline: #720f0f solid 2px;
+}
+
+
+
+
+
+
+
+a:visited {
+  color: inherit; /* or any other color value */
+}
+a {
+  text-decoration: none; /* Remove underline if not needed */
+}
+
+.banner{
+  width: 100%
+}
+
+.banner-image {
+  width: 100vw;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Ensure the image does not exceed its container's height */
+  margin-top: 14px;
+}
+
+
+.topRightCorner {
+  float: right;
+  text-decoration: none;
+  margin-top: 30px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.circle-container {
+  width: 60px; /* Set the width and height to create a circular shape */
+  height: 60px;
+  border-radius: 50%; /* Make it a circle */
+  overflow: hidden; /* Hide overflowing content */
+  border: 2px solid #fff; /* Add a border to the circle if desired */
+}
+
+.profile-image {
+  width: 100%; /* Make the image fill the circle */
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the circle */
+  border-radius: 50%; /* Ensure the image is also circular */
+}
+
+.UsernameAndButton {
+}
+
+.login-button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #fa7474;
+  color: white;
 }

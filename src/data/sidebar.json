@@ -2,59 +2,15 @@
     {
         "title": "Home",
         "icon": "bi-house-fill",
-        "path" : "/home"
-    },
-    {
-        "title": "Profile",
-        "icon": "bi-person-fill",
-        "path": "/profile"
+        "path" : "/"
     },
     {
         "title": "Categories",
         "icon": "bi-app-indicator",
-        "path": "/categories",
-        "childrens": [
-            {
-                "title": "Plomberie",
-                "path": "/plomberie"
-            },
-            {
-                "title": "Electricite",
-                "path": "/electricite"
-            },
-            {
-                "title": "Divers",
-                "path": "/divers"
-            }
-        ]
+        "path": "/categories"
     },
     {
-        "title": "Seetings",
-        "icon": "bi-gear-fill",
-        "path": "/settings"
-    },
-    {
-        "title": "About",
-        "icon": "bi-info-circle-fill",
-        "path": "/about"
-    },
-    {
-        "title": "Support",
-        "icon": "bi-question-circle-fill",
-        "path": "/support"
-    },
-    {
-        "title": "Report Bug",
-        "icon": "bi-bug",
-        "path": "/report-bug"
-    },
-    {
-        "title": "Login",
-        "icon": "bi-question-circle-fill",
-        "path": "/login"
-    },
-    {
-        "title": "Signup",
-        "icon": "bi-question-circle-fill",
-        "path": "/signup"
+        "title": "Messages",
+        "icon": "bi-chat-dots",
+        "path": "/messages"
     }]

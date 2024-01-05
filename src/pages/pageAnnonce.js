@@ -1,12 +1,27 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import adData from '../data/exemples-annonces.json';
 
 const PageAnnonce = () => {
   const { id } = useParams();
+  const [jsonData, setjsonData] = useState([]);
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:3001/api/accounts');
+      const data = await response.json();
+      setjsonData(data);
+    } catch (error) {
+      console.error('Error fetching accounts:', error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   
-  const findAdById = (idAnnonce, data) => {
-    const announcement = data.find(item => item.idAnnonce === idAnnonce);
+  const findAdById = (idAnnonce, jsonData) => {
+    const announcement = jsonData.find(item => item.idAnnonce === idAnnonce);
   
     return announcement || null;
   };
@@ -16,6 +31,7 @@ const PageAnnonce = () => {
     return <div>Announcement not found</div>;
   }
 
+  
   return (
     
     <div>
