@@ -1,18 +1,33 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../styles.scss";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+import { useAuth } from "../contexts/AuthContext";
 
 const Login = () => {
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
+  const { isLoggedIn, login, logout } = useAuth();
 
   const handleSubmit = async (e) => {
-    console.log("Submitted");
+    e.preventDefault();
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      login();
+      navigate("/home");
+    } catch (err) {
+      setErr(true);
+    }
   };
+
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">Lama Chat</span>
+        <span className="logo">Kolchayy.tn</span>
         <span className="title">Login</span>
         <form onSubmit={handleSubmit}>
           <input type="email" placeholder="email" />

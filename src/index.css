@@ -71,8 +71,28 @@ body{
   color: #000
 }
 
-.logInStatus{
-  text-align: right;
-  margin-left: 90%;
-  width: fit-content;
+.logInStatus {
+  float: right;
+  display: flex;
+  justify-content: space-between; /* Horizontal spacing */
+  align-items: center; /* Vertical centering */
+  margin-right: 50px; /* Adjust the margin as needed */
+}
+
+.circle-container {
+  position: absolute;
+  top: 20px; /* Adjust the top position as needed */
+  right: 20px; /* Adjust the right position as needed */
+  width: 60px; /* Set the width and height to create a circular shape */
+  height: 60px;
+  border-radius: 50%; /* Make it a circle */
+  overflow: hidden; /* Hide overflowing content */
+  border: 2px solid #fff; /* Add a border to the circle if desired */
+}
+
+.profile-image {
+  width: 100%; /* Make the image fill the circle */
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the circle */
+  border-radius: 50%; /* Ensure the image is also circular */
 }

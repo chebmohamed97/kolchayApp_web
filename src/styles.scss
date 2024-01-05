@@ -15,14 +15,14 @@
   }
   
   .formContainer {
-    background-color: #a7bcff;
+    background-color: #fff;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
   
     .formWrapper {
-      background-color: white;
+      background-color: #a7bcff;
       padding: 20px 60px;
       border-radius: 10px;
       display: flex;
@@ -31,14 +31,14 @@
       align-items: center;
   
       .logo {
-        color: #5d5b8d;
+        color: #fff;
         font-weight: bold;
         font-size: 24px;
   
       }
   
       .title {
-        color: #5d5b8d;
+        color: #000;
         font-size: 12px;
       }
   

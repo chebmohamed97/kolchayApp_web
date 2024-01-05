@@ -1,0 +1,54 @@
+accessToken
+: 
+"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQxNjg5NDE1ZWMyM2EzMzdlMmJiYWE1ZTNlNjhiNjZkYzk5MzY4ODQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20va29sY2hheWFwcCIsImF1ZCI6ImtvbGNoYXlhcHAiLCJhdXRoX3RpbWUiOjE3MDQ0NjE3NTUsInVzZXJfaWQiOiJOdFVMRHVoYjhvYUVHR3RoeUg0blVZem84N24xIiwic3ViIjoiTnRVTER1aGI4b2FFR0d0aHlING5VWXpvODduMSIsImlhdCI6MTcwNDQ2MTc1NSwiZXhwIjoxNzA0NDY1MzU1LCJlbWFpbCI6ImNoZWJhYW5lbW9oYW1lZDAwN0BnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiY2hlYmFhbmVtb2hhbWVkMDA3QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.Or4Zt_E26sLdjwKVTWyUskpiTk-tWQu-vAjiXLz-uHkvgdCjyBYNB18cQFPCmWBiKFk8jeDgWrOx6piQDeTCfDMQxK7qRB4pktTiiXsXFIO_5CH81YzXgrDZsQLRzFRVoAdBs-qjQqbzBKbpd0YdszrfzXrXWSxonnfX-49WCyIocAO5vtWZX4g2yzDHmTomhKNNnMS87oqsy_djITa8mhQatwcULZud1CUOQHRUa8Ol-QylS-yQdC5e0ra1xAeTvbjiiPbEi7EJDz_11kFx39vd1drJvVhdQumIGdd8Vi_cc-Z4xo5ZL1-6itkQ-UKwb9H5swuGJr-ccGelJHsLaQ"
+auth
+: 
+AuthImpl {app: FirebaseAppImpl, heartbeatServiceProvider: Provider, appCheckServiceProvider: Provider, config: {…}, currentUser: UserImpl, …}
+displayName
+: 
+null
+email
+: 
+"chebaanemohamed007@gmail.com"
+emailVerified
+: 
+false
+isAnonymous
+: 
+false
+metadata
+: 
+UserMetadata {createdAt: '1704461755573', lastLoginAt: '1704461755573', lastSignInTime: 'Fri, 05 Jan 2024 13:35:55 GMT', creationTime: 'Fri, 05 Jan 2024 13:35:55 GMT'}
+phoneNumber
+: 
+null
+photoURL
+: 
+null
+proactiveRefresh
+: 
+ProactiveRefresh {user: UserImpl, isRunning: false, timerId: null, errorBackoff: 30000}
+providerData
+: 
+[{…}]
+providerId
+: 
+"firebase"
+reloadListener
+: 
+null
+reloadUserInfo
+: 
+{localId: 'NtULDuhb8oaEGGthyH4nUYzo87n1', email: 'chebaanemohamed007@gmail.com', passwordHash: 'UkVEQUNURUQ=', emailVerified: false, passwordUpdatedAt: 1704461755573, …}
+stsTokenManager
+: 
+StsTokenManager {refreshToken: 'AMf-vBxJ_hZf-szOPUA_PjMePCJWDlTqWwWyuzSInwbZGyrnDN…WPWFu3W_JiVjrQZQ4kvySLICNriOFqKl6xyvGwbHWsxbFdqZA', accessToken: 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImQxNjg5NDE1ZWMyM2EzMz…dd8Vi_cc-Z4xo5ZL1-6itkQ-UKwb9H5swuGJr-ccGelJHsLaQ', expirationTime: 1704465355866}
+tenantId
+: 
+null
+uid
+: 
+"NtULDuhb8oaEGGthyH4nUYzo87n1"
+refreshToken
+: 
+(...)

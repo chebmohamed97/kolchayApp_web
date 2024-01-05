@@ -10,43 +10,19 @@
         "path": "/profile"
     },
     {
+        "title": "Messages",
+        "icon": "bi-chat-dots",
+        "path": "/messages"
+    },
+    {
         "title": "Categories",
         "icon": "bi-app-indicator",
-        "path": "/categories",
-        "childrens": [
-            {
-                "title": "Plomberie",
-                "path": "/plomberie"
-            },
-            {
-                "title": "Electricite",
-                "path": "/electricite"
-            },
-            {
-                "title": "Divers",
-                "path": "/divers"
-            }
-        ]
+        "path": "/categories"
     },
     {
-        "title": "Seetings",
+        "title": "Settings",
         "icon": "bi-gear-fill",
         "path": "/settings"
-    },
-    {
-        "title": "About",
-        "icon": "bi-info-circle-fill",
-        "path": "/about"
-    },
-    {
-        "title": "Support",
-        "icon": "bi-question-circle-fill",
-        "path": "/support"
-    },
-    {
-        "title": "Report Bug",
-        "icon": "bi-bug",
-        "path": "/report-bug"
     },
     {
         "title": "Login",
