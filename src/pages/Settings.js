@@ -2,7 +2,7 @@ import React from "react";
 import { useAuth } from "../contexts/AuthContext";
 import LogInStatus from "../components/logInStatus";
 
-const MessagesPage = () => {
+const Settings = () => {
   const { isLoggedIn, currentUser } = useAuth();
 
   if (!isLoggedIn) {
@@ -16,9 +16,9 @@ const MessagesPage = () => {
   return (
     <div>
       <LogInStatus />
-      <h2>Messages</h2>
+      <h2>Settings</h2>
     </div>
   );
 };
 
-export default MessagesPage;
+export default Settings;

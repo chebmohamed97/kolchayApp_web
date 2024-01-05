@@ -12,6 +12,7 @@ import Details from "./pages/Details";
 import PageAnnonce from "./pages/pageAnnonce";
 import Register from "./pages/Register";
 import MessagesPage from "./pages/MessagesPage";
+import Settings from "./pages/Settings";
 function App() {
   return (
     <Router>
@@ -30,6 +31,7 @@ function App() {
             <Route path="/details" element={<Details />} />
             <Route path="/annonce/:id" element={<PageAnnonce />} />
             <Route path="/messages" element={<MessagesPage />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
       </div>

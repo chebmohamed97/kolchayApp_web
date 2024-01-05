@@ -5,6 +5,11 @@
         "path" : "/"
     },
     {
+        "title": "Categories",
+        "icon": "bi-app-indicator",
+        "path": "/categories"
+    },
+    {
         "title": "Profile",
         "icon": "bi-person-fill",
         "path": "/profile"
@@ -13,11 +18,6 @@
         "title": "Messages",
         "icon": "bi-chat-dots",
         "path": "/messages"
-    },
-    {
-        "title": "Categories",
-        "icon": "bi-app-indicator",
-        "path": "/categories"
     },
     {
         "title": "Settings",
