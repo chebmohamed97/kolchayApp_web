@@ -6,7 +6,6 @@ import { db } from "../../firebase";
 
 const Chats = () => {
   const [chats, setChats] = useState({}); // Initialize with an empty object
-
   const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
@@ -22,6 +21,7 @@ const Chats = () => {
     };
 
     currentUser.uid && getChats();
+    console.log(chats)
   }, [currentUser.uid]);
 
   const handleSelect = (u) => {
@@ -36,7 +36,8 @@ const Chats = () => {
           key={chat[0]}
           onClick={() => handleSelect(chat[1].userInfo)}
         >
-          <img src={chat[1].userInfo.photoURL} alt="" />
+          {/* <img src={chat[1].userInfo.photoURL} alt="" /> */}
+          {/* <img src={"https://picsum.photos/800/600"} alt="" /> */}
           <div className="userChatInfo">
             <span>{chat[1].userInfo.displayName}</span>
             <p>{chat[1].lastMessage?.text}</p>

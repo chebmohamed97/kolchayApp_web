@@ -49,18 +49,14 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="centerAds">
-        <AddButton />
-        <div className="filterBar">
-          <FilterBarRegion data={jsonData} setFilteredData={setFilteredData} />
-        </div>
-        <div className="filterBar">
-          <FilterBarCategory
-            data={jsonData}
-            setFilteredData={setFilteredData}
-          />
-        </div>
-
+      <AddButton />
+      <div className="filterBar">
+        <FilterBarRegion data={jsonData} setFilteredData={setFilteredData} />
+      </div>
+      <div className="filterBar">
+        <FilterBarCategory data={jsonData} setFilteredData={setFilteredData} />
+      </div>
+      <div className="allAdsHomePage">
         {filteredData.length === 0
           ? jsonData.map((item) => <Annonce key={item.idAnnonce} item={item} />)
           : filteredData.map((item) => (

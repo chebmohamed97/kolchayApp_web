@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import {
   collection,
   query,
@@ -38,9 +38,13 @@ const Search = () => {
     }
   };
 
-  const handleKey = (e) => {
-    e.code === "Enter" && handleSearch();
+  const handleKey = () => {
+    console.log(username);
+    handleSearch();
   };
+  useEffect(() => {
+    handleSearch();
+  }, [username]);
 
   const handleSelect = async () => {
     //check whether the group(chats in firestore) exists, if not create
