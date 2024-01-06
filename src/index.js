@@ -1,16 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import { AuthProvider } from './contexts/AuthContext'
-import { DeviceWidthProvider } from './contexts/WidthContext'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.scss";
+import App from "./App";
+import { AuthProvider } from "./contexts/AuthContext";
+import { DeviceWidthProvider } from "./contexts/WidthContext";
+import { AuthContextProvider } from "./contexts/authContextChat";
+import { ChatContextProvider } from "./contexts/ChatContext";
 ReactDOM.render(
-  <React.StrictMode>
-    <AuthProvider>
-        <DeviceWidthProvider>
+  <AuthContextProvider>
+    <ChatContextProvider>
+      <React.StrictMode>
+        <AuthProvider>
+          <DeviceWidthProvider>
             <App />
-        </DeviceWidthProvider>
-    </AuthProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+          </DeviceWidthProvider>
+        </AuthProvider>
+      </React.StrictMode>
+    </ChatContextProvider>
+  </AuthContextProvider>,
+  document.getElementById("root")
+);

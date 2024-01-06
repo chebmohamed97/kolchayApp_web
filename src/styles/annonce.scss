@@ -1,3 +1,13 @@
+@mixin verySmallwidth {
+  @media screen and (max-width: 280px) {
+    @content;
+  }
+}
+@mixin Smallwidth {
+  @media screen and (max-width: 340px) {
+    @content;
+  }
+}
 @mixin mobile {
   @media screen and (max-width: 480px) {
     @content;
@@ -27,9 +37,13 @@
     font-size: 14px;
     height: 300px;
     outline: 4px solid #000;
-    @include mobile() {
+    @include tablet() {
       width: 95%
     }
+  }
+
+  .annonce:hover{
+    cursor: pointer;
   }
 
 
@@ -41,10 +55,21 @@
   font-size: 1.25rem;
   font-weight: bold;
   text-decoration: none;
+  @include Smallwidth() {
+    font-size: 6vw;
+  }
+
 }
 
 .keyWords{
-  margin: 2px 5px 2px
+  margin: 2px 5px 2px;
+  width: 95%;
+  height: 25%;
+  overflow: hidden;
+  font-size: 0.8rem;
+  @include verySmallwidth() {
+    font-size: 5vw;
+  }
 }
 
 .AnnonceAuthor{
@@ -106,7 +131,7 @@
   margin-left: 10px;
   padding-right: 20px;
   margin-right: 10px;
-  height: 40%;
+  height: 35%;
   width: 100%;
   overflow:hidden;
 }
@@ -165,3 +190,4 @@
   font-weight: bold;
   outline: 2px solid #000;
 }
+

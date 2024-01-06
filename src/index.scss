@@ -1,9 +1,41 @@
+@mixin verySmallwidth {
+  @media screen and (max-width: 280px) {
+    @content;
+  }
+}
+@mixin Smallwidth {
+  @media screen and (max-width: 350px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+h2{
+  text-align: center;
+}
+a {
+  color: inherit; /* Use the color of the parent element */
+  text-decoration: none; /* Remove underline */
+}
 
 html, body{
   height: 100vh;
@@ -87,19 +119,26 @@ body{
   width: 65px;
   height: 65px;
   padding-top: 10px;
+  margin-top: 4%;
+
 }
 
 .topbar {
   display: inline-block;
   width: fit-content;
-  max-width: 65%;
+  max-width: 60%;
   background-color: #fff;
   padding-top: 5px;
-  margin-top: 10px;
+  margin-top: 5%;
   text-align: center;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  @include Smallwidth() {
+    font-size: 12px;
+    height: 60px;
+    overflow: hidden;
+  }
 }
 
 .topbarItem{
@@ -147,10 +186,10 @@ a {
 .circle-container {
   display: inline-block;
   position: absolute;
-  top: 25px;
+  top: 30px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   overflow: hidden;
   outline: 3px solid #000;
@@ -164,8 +203,13 @@ a {
 .nameDisplay{
   margin-top: 10px;
   display: flex;
-  justify-content: flex-end;
-  margin-right: 2px;
+  display: inline-block;
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  width: 80px;
+  height: 20px;
+  text-align: right;
   font-family: Tahoma;
   font-weight: bold;
   font-size: 0.8rem;
@@ -201,8 +245,49 @@ a {
 
 .websiteHeader{
   display: table;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
   width: 100vw;
+  height: 10vh;
   position: sticky;
   padding-left: 10px;
   padding-right: 10px;
+}
+.centerAds{
+  margin:auto;
+  justify-content: center; 
+  align-items: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.circle-container-new-ad {
+  display: inline-block;
+  position: fixed;
+  background-color: #fff;
+  bottom: 25px;
+  right: 9px;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #720f0f;
+  padding-top: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: 3px solid #720f0f;
+}
+
+.circle-container-new-ad:hover {
+  background-color: #fde0e0;
+  cursor: pointer;
+}
+
+.newAdContainer{
+  margin-top: 30px;
 }

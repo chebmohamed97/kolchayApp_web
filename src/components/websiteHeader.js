@@ -9,7 +9,7 @@ export default function WebsiteHeader() {
       <img src={logo} alt="KCLogoWBG" className="logoTopLeft" />
       <Topbar />
       <LogInStatus />
-      <NameDisplay />
+      {/* <NameDisplay /> */}
     </div>
   );
 }

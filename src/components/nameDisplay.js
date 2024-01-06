@@ -16,16 +16,12 @@ export default function NameDisplay() {
   }, [currentUser]);
 
   return (
-    <div>
+    <>
       {isLoggedIn ? (
-        <div className="nameDisplay">
-          <a href="/profile"> {displayName.toUpperCase()}</a>
-        </div>
+        <div className="nameDisplay">{displayName.toUpperCase()}</div>
       ) : (
-        <div className="nameDisplay">
-          <p> GUEST</p>
-        </div>
+        <div className="nameDisplay">GUEST</div>
       )}
-    </div>
+    </>
   );
 }

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
+import { Link, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
 const NewAdPage = () => {
   const [err, setErr] = useState(false);
-
   const { isLoggedIn, login, logout, currentUser } = useAuth();
-  const [displayName, setDisplayName] = useState("");
   const [jsonData, setjsonData] = useState([]);
   const [lastObject, setLastObject] = useState({});
   const [lastAdID, setLastAdID] = useState(0);
   const [newAd, setNewAd] = useState({});
   const db = getDatabase();
+  const navigate = useNavigate();
+
   const writeUserData = (adJson) => {
     set(ref(db, "ads/" + adJson.idAnnonce), adJson);
   };
@@ -64,11 +64,16 @@ const NewAdPage = () => {
     };
 
     console.log(adJson);
-    writeUserData(adJson);
+    try {
+      writeUserData(adJson);
+      navigate(`/annonce/${adJson.idAnnonce}`);
+    } catch (error) {
+      setErr(true);
+    }
   };
 
   return (
-    <div>
+    <div className="newAdContainer">
       {isLoggedIn ? (
         <div className="formContainer">
           <div className="formWrapper">

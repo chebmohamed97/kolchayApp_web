@@ -24,6 +24,10 @@ const Login = () => {
     }
   };
 
+  const handleRegisterButton = () => {
+    navigate("/signup");
+  };
+
   return (
     <div className="formContainer">
       <div className="formWrapper">
@@ -35,9 +39,8 @@ const Login = () => {
           <button>Sign in</button>
           {err && <span>Something went wrong</span>}
         </form>
-        <p>
-          You don't have an account? <Link to="/signup">Register</Link>
-        </p>
+        <p>You don't have an account?</p>
+        <button onClick={handleRegisterButton}>Register</button>
       </div>
     </div>
   );

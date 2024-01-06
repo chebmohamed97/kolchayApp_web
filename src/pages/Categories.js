@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const Categories = () => {
   return (
     <div>
-      <h2>Categories</h2>
+      <h2>Coming soon</h2>
     </div>
   );
 };

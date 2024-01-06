@@ -11,6 +11,7 @@ import MessagesPage from "./pages/MessagesPage";
 import WebsiteHeader from "./components/websiteHeader";
 import LogoutPage from "./pages/LogoutPage";
 import NewAdPage from "./pages/NewAdPage";
+import ChatPage from "./pages/ChatPage";
 
 function App() {
   return (
@@ -24,9 +25,10 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/Categories" element={<Categories />} />
           <Route path="/annonce/:id" element={<PageAnnonce />} />
-          <Route path="/messages" element={<MessagesPage />} />
+          <Route path="/messages" element={<ChatPage />} />
           <Route path="/logout" element={<LogoutPage />} />
           <Route path="/newad" element={<NewAdPage />} />
+          <Route path="/chatpage" element={<ChatPage />} />
         </Routes>
       </div>
     </Router>

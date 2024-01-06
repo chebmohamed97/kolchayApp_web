@@ -1,14 +1,22 @@
 import React from "react";
 import "../styles/annonce.scss";
 import ClickableText from "./clickableText";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Annonce({ item }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="annonce">
+    <div
+      className="annonce"
+      onClick={() => {
+        navigate(`/annonce/${item.idAnnonce}`);
+      }}
+    >
       <div className="titreAnnonce">
         <ClickableText id={item.idAnnonce} text={item.title} />
       </div>
-      <div classname="keyWords">
+      <div className="keyWords">
         <div className="TypeDeService">{item.serviceType}</div>
         <div className="CategorieDuService">{item.category}</div>
         <div className="AnnonceAuthor">{item.author}</div>

@@ -45,17 +45,22 @@ const Home = () => {
       setLastAdID(lastObject.idAnnonce);
     }
   }, [lastObject]);
+
   return (
     <div>
       <Banner />
-      <AddButton />
-      <div className="filterBar">
-        <FilterBarRegion data={jsonData} setFilteredData={setFilteredData} />
-      </div>
-      <div className="filterBar">
-        <FilterBarCategory data={jsonData} setFilteredData={setFilteredData} />
-      </div>
-      <div>
+      <div className="centerAds">
+        <AddButton />
+        <div className="filterBar">
+          <FilterBarRegion data={jsonData} setFilteredData={setFilteredData} />
+        </div>
+        <div className="filterBar">
+          <FilterBarCategory
+            data={jsonData}
+            setFilteredData={setFilteredData}
+          />
+        </div>
+
         {filteredData.length === 0
           ? jsonData.map((item) => <Annonce key={item.idAnnonce} item={item} />)
           : filteredData.map((item) => (

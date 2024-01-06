@@ -9,8 +9,11 @@ export default function AddButton() {
   return (
     <div>
       {isLoggedIn ? (
-        <a className="addNewAdButton" onClick={() => navigate("/newad")}>
-          Add new Ad
+        <a
+          className="circle-container-new-ad"
+          onClick={() => navigate("/newad")}
+        >
+          +
         </a>
       ) : (
         <p className="messageToLogin">You need to log in to add a new ad ! </p>

@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from "react";
 
 const FilterBarCategory = ({ data, setFilteredData }) => {
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState("");
 
   // Extract unique regions from data
   const uniqueRegions = useMemo(() => {
@@ -30,7 +30,6 @@ const FilterBarCategory = ({ data, setFilteredData }) => {
   return (
     <div>
       <label>
-        Filter by category:
         <select value={filter} onChange={handleFilterChange}>
           <option value="">All categories</option>
           {uniqueRegions.map((category) => (
