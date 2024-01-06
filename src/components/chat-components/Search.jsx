@@ -26,11 +26,9 @@ const Search = () => {
     );
 
     try {
-      console.log(username);
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         setUser(doc.data());
-        console.log(user);
       });
     } catch (err) {
       console.log("got Error DB");
@@ -39,7 +37,6 @@ const Search = () => {
   };
 
   const handleKey = () => {
-    console.log(username);
     handleSearch();
   };
   useEffect(() => {

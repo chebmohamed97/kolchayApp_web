@@ -11,9 +11,6 @@ const Chat = () => {
 
   return (
     <div className="chat">
-      <div className="chatInfo">
-        <span>{data.user?.displayName}</span>
-      </div>
       <Messages />
       <Input/>
     </div>

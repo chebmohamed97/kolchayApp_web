@@ -21,7 +21,6 @@ const Chats = () => {
     };
 
     currentUser.uid && getChats();
-    console.log(chats)
   }, [currentUser.uid]);
 
   const handleSelect = (u) => {

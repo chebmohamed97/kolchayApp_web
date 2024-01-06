@@ -12,6 +12,7 @@ import WebsiteHeader from "./components/websiteHeader";
 import LogoutPage from "./pages/LogoutPage";
 import NewAdPage from "./pages/NewAdPage";
 import ChatPage from "./pages/ChatPage";
+import PageRegion from "./pages/pageRegion";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/logout" element={<LogoutPage />} />
           <Route path="/newad" element={<NewAdPage />} />
           <Route path="/chatpage" element={<ChatPage />} />
+          <Route path="/:region" element={<PageRegion />} />
         </Routes>
       </div>
     </Router>

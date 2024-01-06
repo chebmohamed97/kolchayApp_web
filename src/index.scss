@@ -45,6 +45,10 @@
   box-sizing: border-box;
 }
 
+p{
+  text-align: center;
+  font-weight: bold;
+}
 h2{
   text-align: center;
 }
@@ -136,19 +140,19 @@ body{
   top: 0;
   left: 0;
   width: 100vw;
-  height: 12vh;
+  height: 8vh;
   position: sticky;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
 
   @include min-500px-width(){
-    height: 17vh;
+    height: 20vh;
   }
 
   .logoTopLeft{
-    width: 7%;
-    height: width;
+    width: 7vw;
+    height: 7vw;
     min-width: 60px;
     min-height: 60px;
     margin-top: 1%;
@@ -188,6 +192,9 @@ body{
     border-radius: 50%;
     overflow: hidden;
     outline: 3px solid #000;
+    @include mobile(){
+      top:20%;
+    }
   }
 }
 
@@ -213,7 +220,6 @@ a {
   width: 100vw;
   height: auto; /* Maintain aspect ratio */
   max-height: 100%; /* Ensure the image does not exceed its container's height */
-  margin-top: 14px;
 }
 .addNewAdButton{
   display: flex;
@@ -287,6 +293,7 @@ a {
   justify-content: center; 
   align-items: center;
   width: fit-content;
+  margin-top: 10px;
   @include tablet-min(){
     
   padding-right: auto;
@@ -321,4 +328,29 @@ a {
 
 .newAdContainer{
   margin-top: 30px;
+}
+
+.regionsContainer{
+  .regions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include mobile{
+      font-size: 0.75rem;
+    }
+    .regionItem{
+      display: inline-block;
+      color: #000;
+      margin-top: 5px;
+      margin-left: 10px;
+      margin-bottom: 5px;
+      border-radius: 30px;
+      background: #fff;
+      height: auto;
+      padding: 5px;
+      width:fit-content;
+      font-weight: bold;
+      outline: 2px solid #000;
+    }
+  }
 }

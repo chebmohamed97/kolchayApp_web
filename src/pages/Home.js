@@ -6,6 +6,7 @@ import Banner from "../components/banner";
 import { useAuth } from "../contexts/AuthContext";
 import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
 import AddButton from "../components/AddButton";
+import Regions from "../components/Regions";
 const Home = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [jsonData, setjsonData] = useState([]);
@@ -50,12 +51,18 @@ const Home = () => {
     <div>
       <Banner />
       <AddButton />
-      <div className="filterBar">
+      <p>Choisissez votre ville</p>
+      <div className="regionsContainer">
+        <Regions />
+      </div>
+
+      {/* <div className="filterBar">
         <FilterBarRegion data={jsonData} setFilteredData={setFilteredData} />
       </div>
       <div className="filterBar">
         <FilterBarCategory data={jsonData} setFilteredData={setFilteredData} />
-      </div>
+      </div> */}
+      <p>Annonces publié récemment</p>
       <div className="allAdsHomePage">
         {filteredData.length === 0
           ? jsonData.map((item) => <Annonce key={item.idAnnonce} item={item} />)

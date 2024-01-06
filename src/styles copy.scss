@@ -88,19 +88,18 @@
   }
   
   .home {
-    margin-top: 10px;
     background-color: #fff;
-    height: 90vh;
+    height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: center;
-    overflow: hidden;
   
     .container {
       border: 1px solid white;
       border-radius: 10px;
       width: 100%;
       height: 80%;
-      display: block;
+      display: flex;
       overflow: hidden;
       @include tablet {
        width: 100%;
@@ -178,7 +177,6 @@
           padding: 10px;
           display: flex;
           align-items: center;
-          height: 50px;
           gap: 10px;
           color: white;
           cursor: pointer;
@@ -205,11 +203,6 @@
             }
           }
         }
-      }
-      .chats{
-        height:auto;
-        max-height: 600px;
-        overflow: scroll;
       }
       .chat {
         flex: 4;
@@ -240,7 +233,7 @@
         .messages {
           background-color: #fadbdb;
           padding: 10px;
-          height: 47vh;
+          height: calc(100% - 160px);
           overflow: scroll;
   
           .message {
