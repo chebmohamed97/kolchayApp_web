@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 html, body{
   height: 100vh;
 }
@@ -13,14 +14,16 @@ body{
   color: #000;
 }
 
-.main{
+.home{
+  text-align: center;
 }
 
 
 .container{
   background-color: #fff;
-  margin-left: 2vh;
-  margin-right: 2vh;
+  width: 100vw;
+  padding-left: 5px;
+  padding-right: 5px; 
 }
 .HomeHeader{
   width: auto;
@@ -79,20 +82,20 @@ body{
 }
 
 
-.LogoTopLeft{
-  width: 10%;
-  height: 10%;
-  float: left;
+.logoTopLeft{
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  padding-top: 10px;
 }
 
 .topbar {
-  display: inline;
+  display: inline-block;
   width: fit-content;
   max-width: 65%;
   background-color: #fff;
   padding-top: 5px;
   margin-top: 10px;
-  font-size: 20px;
   text-align: center;
   position: absolute;
   left: 50%;
@@ -100,9 +103,8 @@ body{
 }
 
 .topbarItem{
-  padding: 10px;
-  padding-bottom: 10px;
   display: inline-block;
+  padding: 5px;
   width: fit-content;
   border-radius: 20%;
 }
@@ -111,12 +113,6 @@ body{
   background-color: #fff;
   outline: #720f0f solid 2px;
 }
-
-
-
-
-
-
 
 a:visited {
   color: inherit; /* or any other color value */
@@ -135,22 +131,44 @@ a {
   max-height: 100%; /* Ensure the image does not exceed its container's height */
   margin-top: 14px;
 }
-
-
-.topRightCorner {
-  float: right;
-  text-decoration: none;
-  margin-top: 30px;
-  margin-right: 10px;
-  align-items: center;
-  justify-content: center;
+.addNewAdButton{
+  display: flex;
+  margin-left: 40%;
+  font-weight: bold;
+  margin-top: 20px;
+  width: fit-content;
+  outline: 3px solid #000;
+  border-radius: 20%;
+  padding: 10px
+}
+.addNewAdButton:hover{
+  background-color: #720f0f;
 }
 .circle-container {
-  width: 60px; /* Set the width and height to create a circular shape */
-  height: 60px;
-  border-radius: 50%; /* Make it a circle */
-  overflow: hidden; /* Hide overflowing content */
-  border: 2px solid #fff; /* Add a border to the circle if desired */
+  display: inline-block;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: 3px solid #000;
+}
+
+.messageToLogin{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.nameDisplay{
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2px;
+  font-family: Tahoma;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
 .profile-image {
@@ -161,6 +179,7 @@ a {
 }
 
 .UsernameAndButton {
+  display: block;
 }
 
 .login-button {
@@ -178,4 +197,12 @@ a {
 .login-button:hover {
   background-color: #fa7474;
   color: white;
+}
+
+.websiteHeader{
+  display: table;
+  width: 100vw;
+  position: sticky;
+  padding-left: 10px;
+  padding-right: 10px;
 }

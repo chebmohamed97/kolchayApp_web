@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import Profile from "./pages/Profile";
@@ -9,6 +10,7 @@ import Register from "./pages/Register";
 import MessagesPage from "./pages/MessagesPage";
 import WebsiteHeader from "./components/websiteHeader";
 import LogoutPage from "./pages/LogoutPage";
+import NewAdPage from "./pages/NewAdPage";
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
           <Route path="/annonce/:id" element={<PageAnnonce />} />
           <Route path="/messages" element={<MessagesPage />} />
           <Route path="/logout" element={<LogoutPage />} />
+          <Route path="/newad" element={<NewAdPage />} />
         </Routes>
       </div>
     </Router>

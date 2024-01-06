@@ -5,7 +5,7 @@ import FilterBarCategory from "../components/FilterBarCategory";
 import Banner from "../components/banner";
 import { useAuth } from "../contexts/AuthContext";
 import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
-import annonces from "../data/exemples-annonces.json";
+import AddButton from "../components/AddButton";
 const Home = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [jsonData, setjsonData] = useState([]);
@@ -15,17 +15,6 @@ const Home = () => {
   const getRandomObject = (array) => {
     const randomIndex = Math.floor(Math.random() * array.length);
     return array[randomIndex];
-  };
-
-  const writeUserData = (adID) => {
-    const db = getDatabase();
-    // Example usage with your jsonData array
-    const randomObject = getRandomObject(annonces);
-
-    set(ref(db, "ads/" + adID), {
-      ...randomObject,
-      idAnnonce: adID,
-    });
   };
 
   useEffect(() => {
@@ -59,15 +48,7 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="filterBar">
-        <button
-          className="filterBar"
-          onClick={() => writeUserData(lastAdID + 1)}
-        >
-          Add new Ad
-        </button>
-      </div>
-
+      <AddButton />
       <div className="filterBar">
         <FilterBarRegion data={jsonData} setFilteredData={setFilteredData} />
       </div>

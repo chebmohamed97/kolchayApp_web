@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { auth } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
-
-export default function LogInStatus() {
-  const navigate = useNavigate();
-
+export default function NameDisplay() {
   const { isLoggedIn, login, logout, currentUser } = useAuth();
   const [displayName, setDisplayName] = useState("");
 
@@ -18,15 +14,18 @@ export default function LogInStatus() {
       }
     }
   }, [currentUser]);
+
   return (
-    <div className="circle-container">
-      <Link to="/profile">
-        <img
-          src="https://source.unsplash.com/random/200x200"
-          alt="profileImg"
-          className="profile-image"
-        />
-      </Link>
+    <div>
+      {isLoggedIn ? (
+        <div className="nameDisplay">
+          <a href="/profile"> {displayName.toUpperCase()}</a>
+        </div>
+      ) : (
+        <div className="nameDisplay">
+          <p> GUEST</p>
+        </div>
+      )}
     </div>
   );
 }
