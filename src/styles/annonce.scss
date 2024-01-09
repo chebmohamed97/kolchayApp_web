@@ -8,6 +8,12 @@
     @content;
   }
 }
+
+@mixin max-377px {
+  @media screen and (max-width: 377px) {
+    @content;
+  }
+}
 @mixin mobile {
   @media screen and (max-width: 480px) {
     @content;
@@ -30,7 +36,7 @@
     margin-right: 20px;
     margin-left: 10px;
     margin-right: 10px;
-    border-radius: 10px;
+    border-radius: 3%;
     background: #fff;
     padding: 5px;
     width: 350px;
@@ -38,7 +44,7 @@
     height: fit-content;
     max-height: 300px;
     outline: 4px solid #000;
-    @include tablet() {
+    @include max-377px() {
       width: 95%
     }
   }
@@ -140,45 +146,53 @@
   overflow:hidden;
 }
 
-.contacterAuteur{
-  display: inline-block;
-  color: #000;
-  margin-top: 20px;
-  margin-left: 10px;
-  border-radius: 30px;
-  background: #fff;
-  height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  width:fit-content;
-  font-weight: bold;
-  outline: 4px solid #000;
-  text-decoration: none;
-}
-.contacterAuteur:hover{
-  background: #fff27f;
+.adBottomButtons{
+  display: flex;
+  .contacterAuteur{
+    display: inline-block;
+    color: #000;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 30px;
+    background: #fff;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    width:fit-content;
+    font-weight: bold;
+    outline: 4px solid #000;
+    text-decoration: none;
+  }
+  .contacterAuteur:hover{
+    background: #fff27f;
+  }
+  
+  .signalerAnnonce{
+    display: inline-block;
+    color: #000;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 30px;
+    background: #fff;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    width:fit-content;
+    font-weight: bold;
+    outline: 4px solid #860000;
+  }
+  .priceDisplay{
+    padding-top: 25px;
+    padding-left: 10px;
+  }
 }
 
-.signalerAnnonce{
-  display: inline-block;
-  color: #000;
-  margin-top: 20px;
-  margin-left: 10px;
-  border-radius: 30px;
-  background: #fff;
-  height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  width:fit-content;
-  font-weight: bold;
-  outline: 4px solid #860000;
-}
 
 .RegionDuService{
   display: inline-block;

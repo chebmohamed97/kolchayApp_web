@@ -24,10 +24,13 @@ export default function Annonce({ item }) {
       </div>
 
       <div className="contenuAnnonce">{item.content}</div>
-      <a href={item.idAnnonce || "#"} className="contacterAuteur">
-        {"Contacter"}
-      </a>
-      <div className="signalerAnnonce">{"Signaler l'annonce"}</div>
+      <div className="adBottomButtons">
+        <a href={item.idAnnonce || "#"} className="contacterAuteur">
+          {"Contacter"}
+        </a>
+        <div className="signalerAnnonce">{"Signaler l'annonce"}</div>
+        <div className="priceDisplay"> Offre: {item.offre} DT </div>
+      </div>
     </div>
   );
 }

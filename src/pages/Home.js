@@ -7,6 +7,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
 import AddButton from "../components/AddButton";
 import Regions from "../components/Regions";
+import CategorieHome from "../components/categorieHome";
 const Home = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [jsonData, setjsonData] = useState([]);
@@ -55,7 +56,8 @@ const Home = () => {
       <div className="regionsContainer">
         <Regions />
       </div>
-
+      <p>Choisissez la categorie</p>
+      <CategorieHome />
       {/* <div className="filterBar">
         <FilterBarRegion data={jsonData} setFilteredData={setFilteredData} />
       </div>
