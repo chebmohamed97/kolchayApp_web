@@ -1,10 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import LogInStatus from "../components/logInStatus";
+import { doc, getDoc } from "firebase/firestore";
 
-import Topbar from "../components/topbar";
+import { db } from "../firebase";
+
 const Profile = () => {
   const { isLoggedIn, currentUser } = useAuth();
+  const [userInfo, setUserInfo] = useState({});
+  const fetchPost = async () => {
+    try {
+      if (currentUser && currentUser.uid) {
+        const docRef = doc(db, "users", currentUser.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setUserInfo(docSnap.data());
+        } else {
+          console.log("No such document!");
+        }
+      } else {
+        console.log("currentUser or currentUser.uid is undefined");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPost();
+  }, [currentUser]);
+
+  useEffect(() => {
+    console.log(userInfo);
+  }, [userInfo]);
 
   if (!isLoggedIn) {
     return (
@@ -17,26 +45,54 @@ const Profile = () => {
   return (
     <div>
       <h2>Profile</h2>
-      <p>Name: {currentUser.displayName}</p>
-      <p>Email: {currentUser.email}</p>
-      <p>
-        Email Verification:{" "}
-        {currentUser.emailVerified ? (
-          <span>Verified</span>
+      <div className="profileContainer">
+        <div className="profile-image-container">
+          <img
+            src={userInfo.photoURL}
+            alt="profileImg"
+            className="profile-image"
+          />
+        </div>
+
+        <p>Nom: {userInfo.nom}</p>
+        <p>Prenom: {userInfo.prenom}</p>
+        <p>Nom d'utilisateur: {userInfo.displayName}</p>
+        <p>Email: {currentUser.email}</p>
+        <p>
+          Email Verification:{" "}
+          {currentUser.emailVerified ? (
+            <span>Verified</span>
+          ) : (
+            <span>Not Verified</span>
+          )}
+        </p>
+        <p>
+          Phone number:{" "}
+          {currentUser.phoneNumber ? (
+            <span>{currentUser.phoneNumber}</span>
+          ) : (
+            <span>Unknown</span>
+          )}
+        </p>
+        <p>Account created: {currentUser.metadata?.creationTime || "N/A"}</p>
+        <p>Last login: {currentUser.metadata?.lastSignInTime || "N/A"}</p>
+        <h2> Bio</h2>
+        <p> {userInfo.bio}</p>
+        <h2> Informations Kolchayy:</h2>
+        <p>KolChayy Rating: {userInfo.rating}</p>
+        <p>Nombre de travails fait: {userInfo.jobs_done} </p>
+        {userInfo.driving_licence ? (
+          <p>Permis de conduite: Oui </p>
         ) : (
-          <span>Not Verified</span>
+          <p>Permis de conduite: Non</p>
         )}
-      </p>
-      <p>
-        Phone number:{" "}
-        {currentUser.phoneNumber ? (
-          <span>{currentUser.phoneNumber}</span>
+        {userInfo.has_car ? (
+          <p>Voiture disponible: Oui </p>
         ) : (
-          <span>Unknown</span>
+          <p>Voiture disponible: Non</p>
         )}
-      </p>
-      <p>Account created: {currentUser.metadata?.creationTime || "N/A"}</p>
-      <p>Last login: {currentUser.metadata?.lastSignInTime || "N/A"}</p>
+        <p>Outils disponibles: {userInfo.tools_for_work}</p>
+      </div>
     </div>
   );
 };

@@ -50,15 +50,15 @@ const Home = () => {
     <div>
       <Banner />
       <AddButton />
-      <p>Choisissez votre ville</p>
+      <p className="boldCenteredText">Choisissez votre ville</p>
       <div className="regionsContainer">
         <Regions />
       </div>
-      <p>Choisissez la categorie</p>
+      <p className="boldCenteredText">Choisissez la categorie</p>
       <div className="regionsContainer">
         <CategoriesHome />
       </div>
-      <p>Annonces publié récemment</p>
+      <p className="boldCenteredText">Annonces publié récemment</p>
       <div className="allAdsHomePage">
         {filteredData.length === 0
           ? jsonData.map((item) => <Annonce key={item.idAnnonce} item={item} />)

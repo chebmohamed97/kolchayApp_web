@@ -45,13 +45,6 @@
   box-sizing: border-box;
 }
 
-p{
-  text-align: center;
-  font-weight: bold;
-}
-h2{
-  text-align: center;
-}
 a {
   color: inherit; /* Use the color of the parent element */
   text-decoration: none; /* Remove underline */
@@ -65,7 +58,10 @@ body{
   font-size: 16px;
   color: #000;
 }
-
+.boldCenteredText{
+  text-align: center;
+  font-weight: bold;
+}
 .home{
   text-align: center;
 }
@@ -274,9 +270,14 @@ a {
   font-size: 0.8rem;
 }
 
+.profile-image-container{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
 .profile-image {
-  width: 100%; /* Make the image fill the circle */
-  height: 100%;
+  width: auto; /* Make the image fill the circle */
+  height: auto;
   object-fit: cover; /* Maintain aspect ratio and cover the circle */
   border-radius: 50%; /* Ensure the image is also circular */
 }
@@ -357,67 +358,7 @@ a {
       outline: 2px solid #000;
     }
   }
-
-  .categoriesContainer {  
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-left: 20%;
-      padding-right: 20%;
-      
-      @include tablet(){
-        font-size: 0.75rem;
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-  
-      .categorieItem {
-        display: inline-block;
-        color: #000;
-        margin-top: 5px;
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-bottom: 5px;
-        border-radius: 30px;
-        background: #fff;
-        height: auto;
-        padding: 5px;
-        width:fit-content;
-        font-weight: bold;
-        outline: 2px solid #000;
-    }
+  .profileContainer{
+    margin-left: 50px;
   }
-}
-.categoriesContainer {  
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-left: 20%;
-      padding-right: 20%;
-      
-      @include tablet(){
-        font-size: 0.75rem;
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-  
-      .categorieItem {
-        display: inline-block;
-        color: #000;
-        margin-top: 5px;
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-bottom: 5px;
-        border-radius: 30px;
-        background: #fff;
-        height: auto;
-        padding: 5px;
-        width:fit-content;
-        font-weight: bold;
-        outline: 2px solid #000;
-    }
-  }
-}
 }

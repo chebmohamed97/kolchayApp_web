@@ -23,11 +23,7 @@ export default function Topbar() {
       {items.map((item, index) => (
         <TopbarItem key={item.id || index} item={item} />
       ))}
-      {isLoggedIn ? (
-        <TopbarItem item={logOutItem} />
-      ) : (
-        <TopbarItem item={loginItem} />
-      )}
+      {isLoggedIn ? <TopbarItem item={logOutItem} /> : <></>}
     </div>
   );
 }

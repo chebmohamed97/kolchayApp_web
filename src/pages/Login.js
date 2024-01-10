@@ -4,7 +4,7 @@ import "../styles.scss";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
-
+import Register from "./Register";
 const Login = () => {
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
@@ -29,18 +29,25 @@ const Login = () => {
   };
 
   return (
-    <div className="formContainer">
-      <div className="formWrapper">
-        <span className="logo">Kolchayy.tn</span>
-        <span className="title">Login</span>
-        <form onSubmit={handleSubmit}>
-          <input type="email" placeholder="email" />
-          <input type="password" placeholder="password" />
-          <button>Sign in</button>
-          {err && <span>Something went wrong</span>}
-        </form>
-        <p>You don't have an account?</p>
-        <button onClick={handleRegisterButton}>Register</button>
+    <div>
+      <div className="formContainer">
+        <div className="formWrapper">
+          <span className="logo">Login</span>
+          {/* <span className="title">Login</span> */}
+          <form onSubmit={handleSubmit}>
+            <input type="email" placeholder="email" />
+            <input type="password" placeholder="password" />
+            <button>Sign in</button>
+            {err && <span>Something went wrong</span>}
+          </form>
+          {/* <p>You don't have an account?</p>
+          <button onClick={handleRegisterButton}>Register</button> */}
+        </div>
+      </div>
+
+      <div>
+        <p> OR </p>
+        <Register />
       </div>
     </div>
   );

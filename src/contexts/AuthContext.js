@@ -27,7 +27,6 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
     const unsub = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
-      console.log(user);
     });
 
     return () => {

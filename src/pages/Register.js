@@ -16,9 +16,11 @@ const Register = () => {
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const displayName = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
+    const nom = e.target[0].value;
+    const prenom = e.target[1].value;
+    const displayName = e.target[2].value;
+    const email = e.target[3].value;
+    const password = e.target[4].value;
 
     try {
       //Create user
@@ -33,9 +35,17 @@ const Register = () => {
         //create user on firestore
         await setDoc(doc(db, "users", res.user.uid), {
           uid: res.user.uid,
+          nom: nom,
+          prenom: prenom,
           displayName,
           email,
           photoURL: downloadURL,
+          rating: 0,
+          jobs_done: 0,
+          driving_licence: false,
+          has_car: false,
+          tools_for_work: [],
+          bio: "",
         });
 
         //create empty user chats on firestore
@@ -69,17 +79,19 @@ const Register = () => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">Kolchayy.tn</span>
-        <span className="title">Register</span>
+        <span className="logo">Register</span>
+        {/* <span className="title">Register</span> */}
         <form onSubmit={handleSubmit}>
+          <input required type="text" placeholder="Nom" />
+          <input required type="text" placeholder="Prenom" />
           <input required type="text" placeholder="display name" />
           <input required type="email" placeholder="email" />
           <input required type="password" placeholder="password" />
           <button disabled={loading}>Sign up</button>
           {accountCreationValidation()}
         </form>
-        <p>You do have an account?</p>
-        <button onClick={() => navigate("/login")}> Log in</button>
+        {/* <p>You do have an account?</p>
+        <button onClick={() => navigate("/login")}> Log in</button> */}
       </div>
     </div>
   );
