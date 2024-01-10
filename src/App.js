@@ -31,6 +31,7 @@ function App() {
           <Route path="/newad" element={<NewAdPage />} />
           <Route path="/chatpage" element={<ChatPage />} />
           <Route path="/:region" element={<PageRegion />} />
+          <Route path="/categories/:category" element={<Categories />} />
         </Routes>
       </div>
     </Router>

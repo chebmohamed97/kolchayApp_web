@@ -76,7 +76,7 @@ body{
   width: 100vw;
 }
 .HomeHeader{
-  width: auto;
+  width: 100vw;
   color: #000;
   text-align: left;
   font-size: 40px;
@@ -138,23 +138,24 @@ body{
   top: 0;
   left: 0;
   width: 100vw;
-  height: 13vh;
+  height: 100px;
   position: sticky;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
 
-  @include min-500px-width(){
-    height: 20vh;
+  @include mobile(){
+    height: 70px;
   }
 
   .logoTopLeft{
-    width: 7vw;
-    height: 7vw;
-    min-width: 60px;
-    min-height: 60px;
-    margin-top: 1%;
+    width: 60px;
+    height: 60px;
+    margin-top: 15px;
+    @include mobile(){
+      margin-top: 0px;
     }
+  }
 
   .topbar {
     width: fit-content;
@@ -170,8 +171,8 @@ body{
       height: 35px;
       overflow: hidden;
     }
-    @include max-500px-width(){
-      margin-top:20px
+    @include mobile(){
+      margin-top:15px
     }
     .topbarItem{
       display: inline-flex;
@@ -191,14 +192,26 @@ body{
     overflow: hidden;
     outline: 3px solid #000;
     @include mobile(){
-      top:20%;
-    }
-    @include Smallwidth() {
-      top:35%;
+      top:25px;
       width: 35px;
       height: 35px;
     }
   }
+}
+
+.profileIconTopRight{
+  position: absolute;
+    top: 40px;
+    right: 50px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    @include mobile(){
+      top:25px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+    }
 }
 
 
@@ -272,24 +285,6 @@ a {
   display: block;
 }
 
-.login-button {
-  display: inline-block;
-  padding: 5px 10px;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.login-button:hover {
-  background-color: #fa7474;
-  color: white;
-}
-
-
 .allAdsHomePage{
   display: flex;
   flex-wrap: wrap;
@@ -338,19 +333,20 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    @include tablet-min(){
-      padding-left: 20%;
-      padding-right: 20%;
-    }
+    padding-left: 20%;
+    padding-right: 20%;
     
-    @include mobile{
+    @include tablet(){
       font-size: 0.75rem;
+      padding-left: 5%;
+      padding-right: 5%;
     }
     .regionItem{
       display: inline-block;
       color: #000;
       margin-top: 5px;
-      margin-left: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
       margin-bottom: 5px;
       border-radius: 30px;
       background: #fff;
@@ -362,26 +358,66 @@ a {
     }
   }
 
-  .categorieHomeContainer {
-    width: 90vw;
-    height: max-content;
-    display: flex;
-  }
+  .categoriesContainer {  
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 20%;
+      padding-right: 20%;
+      
+      @include tablet(){
+        font-size: 0.75rem;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
   
-  .categorieHomeItem {
-    text-align: center;
-    height: 20vw;
-    width: 20vw;
-    flex: 0 0 20vw;
-    margin-right: 10px;
-    outline: 2px solid #000;
-    background-color: #720f0f;
-    font-weight: bold;
-  
-    .itemImage {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      .categorieItem {
+        display: inline-block;
+        color: #000;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        border-radius: 30px;
+        background: #fff;
+        height: auto;
+        padding: 5px;
+        width:fit-content;
+        font-weight: bold;
+        outline: 2px solid #000;
     }
   }
+}
+.categoriesContainer {  
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 20%;
+      padding-right: 20%;
+      
+      @include tablet(){
+        font-size: 0.75rem;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+  
+      .categorieItem {
+        display: inline-block;
+        color: #000;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        border-radius: 30px;
+        background: #fff;
+        height: auto;
+        padding: 5px;
+        width:fit-content;
+        font-weight: bold;
+        outline: 2px solid #000;
+    }
+  }
+}
 }
