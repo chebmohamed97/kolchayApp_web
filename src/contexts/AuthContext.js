@@ -2,6 +2,9 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+
+import { db } from "../firebase";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -11,6 +14,7 @@ export const AuthProvider = ({ children }) => {
   });
 
   const [currentUser, setCurrentUser] = useState({});
+  const [userInfo, setUserInfo] = useState({});
 
   const login = () => {
     // Your login logic here
@@ -21,7 +25,24 @@ export const AuthProvider = ({ children }) => {
     // Your logout logic here
     setLoggedIn(false);
   };
+  const fetchUserData = async () => {
+    try {
+      if (currentUser && currentUser.uid) {
+        const docRef = doc(db, "users", currentUser.uid);
+        const docSnap = await getDoc(docRef);
 
+        if (docSnap.exists()) {
+          setUserInfo(docSnap.data());
+        } else {
+          console.log("No such document!");
+        }
+      } else {
+        console.log("currentUser or currentUser.uid is undefined");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   // Update local storage when login state changes
   useEffect(() => {
     localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
@@ -34,8 +55,14 @@ export const AuthProvider = ({ children }) => {
     };
   }, [isLoggedIn]);
 
+  useEffect(() => {
+    fetchUserData();
+  }, [currentUser]);
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout, currentUser }}>
+    <AuthContext.Provider
+      value={{ isLoggedIn, login, logout, currentUser, userInfo }}
+    >
       {children}
     </AuthContext.Provider>
   );

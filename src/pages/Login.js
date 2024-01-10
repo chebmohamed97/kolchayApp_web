@@ -24,10 +24,6 @@ const Login = () => {
     }
   };
 
-  const handleRegisterButton = () => {
-    navigate("/signup");
-  };
-
   return (
     <div>
       <div className="formContainer">

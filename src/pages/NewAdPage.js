@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { doc, getDoc } from "firebase/firestore";
 
+import { db } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
 const NewAdPage = () => {
   const [err, setErr] = useState(false);
-  const { isLoggedIn, login, logout, currentUser } = useAuth();
+  const { isLoggedIn, login, logout, currentUser, userInfo } = useAuth();
   const [jsonData, setjsonData] = useState([]);
   const [lastObject, setLastObject] = useState({});
   const [lastAdID, setLastAdID] = useState(0);
   const [newAd, setNewAd] = useState({});
   const db = getDatabase();
   const navigate = useNavigate();
-
   const writeUserData = (adJson) => {
     set(ref(db, "ads/" + adJson.idAnnonce), adJson);
   };
@@ -30,7 +31,8 @@ const NewAdPage = () => {
       .catch((error) => {
         console.error(error);
       });
-    //writeUserData(3);
+
+    console.log(currentUser);
   }, []);
 
   useEffect(() => {
@@ -45,18 +47,24 @@ const NewAdPage = () => {
       setLastAdID(lastObject.idAnnonce + 1);
     }
   }, [lastObject]);
+
+  useEffect(() => {
+    console.log(userInfo);
+  }, [userInfo]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const titre = e.target[0].value;
-    const nomEtPrenom = e.target[1].value;
-    const region = e.target[2].value;
-    const categorie = e.target[3].value;
-    const contenu = e.target[4].value;
-
+    const region = e.target[1].value;
+    const categorie = e.target[2].value;
+    const contenu = e.target[3].value;
+    const offre = e.target[4].value;
+    const nomEtPrenom = userInfo.nom + userInfo.prenom;
     const adJson = {
       title: titre,
       author: nomEtPrenom,
+      author_uid: currentUser.uid,
       region: region,
+      offre: offre,
       serviceType: "Recherche de Service",
       category: categorie,
       content: contenu,
@@ -80,10 +88,10 @@ const NewAdPage = () => {
             <span className="logo">Kolchayy.tn</span>
             <form onSubmit={handleSubmit}>
               <input required type="text" placeholder="Titre" />
-              <input required type="text" placeholder="Nom et Prenom" />
               <input required type="text" placeholder="Region" />
               <input required type="text" placeholder="Categorie" />
               <input required type="text" placeholder="Contenu" />
+              <input required type="text" placeholder="Prix" />
               <button>Add new ad</button>
               {err && <span>Something went wrong</span>}
             </form>

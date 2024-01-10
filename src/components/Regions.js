@@ -29,8 +29,8 @@ export default function Regions() {
   ];
   return (
     <div className="regions">
-      {listeGouvernerat.map((item) => (
-        <RegionItem key={item.index} gouvernerat={item} />
+      {listeGouvernerat.map((item, index) => (
+        <RegionItem key={index} gouvernerat={item} />
       ))}
     </div>
   );

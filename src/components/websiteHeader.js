@@ -8,7 +8,9 @@ import { useAuth } from "../contexts/AuthContext";
 export default function WebsiteHeader() {
   const navigate = useNavigate();
   const { isLoggedIn, login, logout, currentUser } = useAuth();
-
+  const handleLogoClick = () => {
+    navigate("/");
+  };
   const handleClick = () => {
     if (isLoggedIn) {
       navigate("/profile");
@@ -18,7 +20,10 @@ export default function WebsiteHeader() {
   };
   return (
     <div className="websiteHeader">
-      <img src={logo} alt="KCLogoWBG" className="logoTopLeft" />
+      <div onClick={handleLogoClick}>
+        <img src={logo} alt="KCLogoWBG" className="logoTopLeft" />
+      </div>
+
       <Topbar />
       {/*<LogInStatus />*/}
       <div className="profileIconTopRight" onClick={handleClick}>

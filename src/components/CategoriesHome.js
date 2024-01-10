@@ -16,8 +16,8 @@ export default function CategoriesHome() {
   ];
   return (
     <div className="regions">
-      {liste_categories.map((item) => (
-        <CategorieHomeItem key={item.index} category={item} />
+      {liste_categories.map((item, index) => (
+        <CategorieHomeItem key={index} category={item} />
       ))}
     </div>
   );

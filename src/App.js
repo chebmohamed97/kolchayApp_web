@@ -13,6 +13,7 @@ import LogoutPage from "./pages/LogoutPage";
 import NewAdPage from "./pages/NewAdPage";
 import ChatPage from "./pages/ChatPage";
 import PageRegion from "./pages/pageRegion";
+import NewHome from "./pages/newHomePage";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/chatpage" element={<ChatPage />} />
           <Route path="/:region" element={<PageRegion />} />
           <Route path="/categories/:category" element={<Categories />} />
+          <Route path="/test" element={<NewHome />} />
         </Routes>
       </div>
     </Router>

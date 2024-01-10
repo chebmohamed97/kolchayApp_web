@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { useAuth } from "../contexts/AuthContext";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
@@ -12,7 +16,17 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [showMessage, setShowMessage] = useState(0);
   const navigate = useNavigate();
+  const { isLoggedIn, login, logout } = useAuth();
 
+  const executeLogin = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      login();
+      navigate("/");
+    } catch (err) {
+      setErr(true);
+    }
+  };
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
@@ -57,6 +71,8 @@ const Register = () => {
         setLoading(false);
         setShowMessage(2);
       }
+
+      executeLogin(email, password);
     } catch (err) {
       setShowMessage(2);
       setErr(true);

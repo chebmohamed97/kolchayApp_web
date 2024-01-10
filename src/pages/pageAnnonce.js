@@ -13,6 +13,7 @@ const PageAnnonce = () => {
       .then((snapshot) => {
         if (snapshot.exists()) {
           setjsonData(snapshot.val());
+          console.log(snapshot.val());
         } else {
           console.log("No data available");
         }
@@ -20,14 +21,16 @@ const PageAnnonce = () => {
       .catch((error) => {
         console.error(error);
       });
-    //writeUserData(3);
   }, []);
 
   const findAdById = (idAnnonce, jsonData) => {
-    const announcement = jsonData.find((item) => item.idAnnonce === idAnnonce);
+    const announcement = jsonData.find(
+      (item) => item && item.idAnnonce === idAnnonce
+    );
 
     return announcement || null;
   };
+
   const announcement = findAdById(Number(id), jsonData);
 
   if (!announcement) {

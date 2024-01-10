@@ -5,34 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 const Profile = () => {
-  const { isLoggedIn, currentUser } = useAuth();
-  const [userInfo, setUserInfo] = useState({});
-  const fetchPost = async () => {
-    try {
-      if (currentUser && currentUser.uid) {
-        const docRef = doc(db, "users", currentUser.uid);
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          setUserInfo(docSnap.data());
-        } else {
-          console.log("No such document!");
-        }
-      } else {
-        console.log("currentUser or currentUser.uid is undefined");
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPost();
-  }, [currentUser]);
-
-  useEffect(() => {
-    console.log(userInfo);
-  }, [userInfo]);
+  const { isLoggedIn, currentUser, userInfo } = useAuth();
 
   if (!isLoggedIn) {
     return (
