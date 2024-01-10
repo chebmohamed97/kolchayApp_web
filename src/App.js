@@ -14,7 +14,6 @@ import NewAdPage from "./pages/NewAdPage";
 import ChatPage from "./pages/ChatPage";
 import PageRegion from "./pages/pageRegion";
 import NewHome from "./pages/newHomePage";
-
 function App() {
   return (
     <Router>

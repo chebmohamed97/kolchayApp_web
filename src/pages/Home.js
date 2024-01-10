@@ -6,6 +6,7 @@ import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
 import AddButton from "../components/AddButton";
 import Regions from "../components/Regions";
 import CategoriesHome from "../components/CategoriesHome";
+import { json } from "react-router-dom";
 const Home = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [jsonData, setjsonData] = useState([]);
@@ -22,7 +23,9 @@ const Home = () => {
     get(child(dbRef, `ads/`))
       .then((snapshot) => {
         if (snapshot.exists()) {
-          setjsonData(snapshot.val());
+          const data = snapshot.val();
+          data.reverse();
+          setjsonData(data);
         } else {
           console.log("No data available");
         }

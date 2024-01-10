@@ -8,6 +8,7 @@ const PageAnnonce = () => {
   const [jsonData, setjsonData] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const dbRef = ref(getDatabase());
     get(child(dbRef, `ads/`))
       .then((snapshot) => {

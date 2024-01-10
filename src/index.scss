@@ -61,6 +61,8 @@ body{
 .boldCenteredText{
   text-align: center;
   font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .home{
   text-align: center;
@@ -248,7 +250,6 @@ a {
   background-color: #720f0f;
 }
 
-
 .messageToLogin{
   display: flex;
   justify-content: center; 
@@ -359,7 +360,7 @@ a {
       outline: 2px solid #000;
     }
   }
-  .profileContainer{
-    margin-left: 50px;
+  .profileInfosContainer{
+    margin-left: 20px;
   }
 }

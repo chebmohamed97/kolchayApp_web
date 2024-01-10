@@ -26,45 +26,46 @@ const Profile = () => {
             className="profile-image"
           />
         </div>
-
-        <p>Nom: {userInfo.nom}</p>
-        <p>Prenom: {userInfo.prenom}</p>
-        <p>Nom d'utilisateur: {userInfo.displayName}</p>
-        <p>Email: {currentUser.email}</p>
-        <p>
-          Email Verification:{" "}
-          {currentUser.emailVerified ? (
-            <span>Verified</span>
+        <div className="profileInfosContainer">
+          <p>Nom: {userInfo.nom}</p>
+          <p>Prenom: {userInfo.prenom}</p>
+          <p>Nom d'utilisateur: {userInfo.displayName}</p>
+          <p>Email: {currentUser.email}</p>
+          <p>
+            Email Verification:{" "}
+            {currentUser.emailVerified ? (
+              <span>Verified</span>
+            ) : (
+              <span>Not Verified</span>
+            )}
+          </p>
+          <p>
+            Phone number:{" "}
+            {currentUser.phoneNumber ? (
+              <span>{currentUser.phoneNumber}</span>
+            ) : (
+              <span>Unknown</span>
+            )}
+          </p>
+          <p>Account created: {currentUser.metadata?.creationTime || "N/A"}</p>
+          <p>Last login: {currentUser.metadata?.lastSignInTime || "N/A"}</p>
+          <h2> Bio</h2>
+          <p> {userInfo.bio}</p>
+          <h2> Informations Kolchayy:</h2>
+          <p>KolChayy Rating: {userInfo.rating}</p>
+          <p>Nombre de travails fait: {userInfo.jobs_done} </p>
+          {userInfo.driving_licence ? (
+            <p>Permis de conduite: Oui </p>
           ) : (
-            <span>Not Verified</span>
+            <p>Permis de conduite: Non</p>
           )}
-        </p>
-        <p>
-          Phone number:{" "}
-          {currentUser.phoneNumber ? (
-            <span>{currentUser.phoneNumber}</span>
+          {userInfo.has_car ? (
+            <p>Voiture disponible: Oui </p>
           ) : (
-            <span>Unknown</span>
+            <p>Voiture disponible: Non</p>
           )}
-        </p>
-        <p>Account created: {currentUser.metadata?.creationTime || "N/A"}</p>
-        <p>Last login: {currentUser.metadata?.lastSignInTime || "N/A"}</p>
-        <h2> Bio</h2>
-        <p> {userInfo.bio}</p>
-        <h2> Informations Kolchayy:</h2>
-        <p>KolChayy Rating: {userInfo.rating}</p>
-        <p>Nombre de travails fait: {userInfo.jobs_done} </p>
-        {userInfo.driving_licence ? (
-          <p>Permis de conduite: Oui </p>
-        ) : (
-          <p>Permis de conduite: Non</p>
-        )}
-        {userInfo.has_car ? (
-          <p>Voiture disponible: Oui </p>
-        ) : (
-          <p>Voiture disponible: Non</p>
-        )}
-        <p>Outils disponibles: {userInfo.tools_for_work}</p>
+          <p>Outils disponibles: {userInfo.tools_for_work}</p>
+        </div>
       </div>
     </div>
   );
