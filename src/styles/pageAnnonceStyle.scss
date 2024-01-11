@@ -1,0 +1,31 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+      @content;
+    }
+  }
+.infoAnnonceContainer{
+    width: fit-content;
+    max-width: 1000px;
+    padding-top: 20px;
+    max-width: 500px;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    @include mobile(){
+        margin-left: 5vw;
+        margin-right: 5vw;
+      }
+    .adContentText{
+        margin-bottom: 50px;
+    }
+    .adTitel{
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .adSubTitel{
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+  }
