@@ -15,7 +15,9 @@ const CategoryPage = () => {
       .then((snapshot) => {
         if (snapshot.exists()) {
           const data = snapshot.val();
-          const filteredData = data.filter(
+          // Convert the object into an array of its values
+          const dataArray = Object.values(data);
+          const filteredData = dataArray.filter(
             (item) => item.category === category
           );
           setjsonData(filteredData);
