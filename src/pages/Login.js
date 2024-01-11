@@ -42,7 +42,6 @@ const Login = () => {
       </div>
 
       <div>
-        <p> OR </p>
         <Register />
       </div>
     </div>

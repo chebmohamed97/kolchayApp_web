@@ -53,13 +53,14 @@ const Register = () => {
           prenom: prenom,
           displayName,
           email,
+          tel_number: "",
           photoURL: downloadURL,
           rating: 0,
           jobs_done: 0,
           driving_licence: false,
           has_car: false,
           tools_for_work: [],
-          bio: "",
+          bio: "Ici je peux ecrire une petite description de ma personne et aussi decrire mes experiences et skills",
         });
 
         //create empty user chats on firestore

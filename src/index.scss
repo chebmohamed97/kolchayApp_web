@@ -73,60 +73,17 @@ body{
   background-color: #fff;
   width: 100vw;
 }
-.HomeHeader{
-  width: 100vw;
-  color: #000;
-  text-align: left;
-  font-size: 40px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
+
 .title{
   font-size: 3em;
 }
 
-.inlineblocks{
-  display: block;
-}
 .info{
   font-size: 1.1em;
   letter-spacing: 1px;
   line-height: 1.5;
   margin: 1.5em;
   color: #000;
-}
-.btn{
-  margin: 0 auto;
-  border: none;
-  outline: none;
-  padding: .75em 1em;
-  font-size: 1em;
-  letter-spacing: 1px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, .4);
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 3px;
-  background-color: rgb(134, 49, 0);
-  color: #fff;
-}
-.loginPage{
-  color: #000;
-  flex-grow: 1;
-  padding: 2em;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-}
-
-.filterBar{
-  margin-top: 15px;
-  padding: 5px 10px;
-  display: flex;
-  margin-right: 60px;
-  color: #000;
-  font-size: 16px;
-  justify-content: center;
-  text-align: center;
 }
 
 .websiteHeader{
@@ -140,7 +97,7 @@ body{
   position: sticky;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 10px;
+  padding-top: 0px;
 
   @include mobile(){
     height: 70px;
@@ -181,22 +138,7 @@ body{
       border-radius: 20%;
     }
     }
-  .circle-container {
-    position: absolute;
-    top: 40%;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    overflow: hidden;
-    outline: 3px solid #000;
-    @include mobile(){
-      top:25px;
-      width: 35px;
-      height: 35px;
-    }
   }
-}
 
 .profileIconTopRight{
   position: absolute;
@@ -206,7 +148,7 @@ body{
     height: 20px;
     cursor: pointer;
     @include mobile(){
-      top:25px;
+      top:15px;
       right: 10px;
       width: 50px;
       height: 50px;
@@ -257,20 +199,6 @@ a {
   font-weight: bold;
   margin-top: 5px;
 }
-.nameDisplay{
-  margin-top: 10px;
-  display: flex;
-  display: inline-block;
-  position: absolute;
-  top: 70px;
-  right: 10px;
-  width: 80px;
-  height: 20px;
-  text-align: right;
-  font-family: Tahoma;
-  font-weight: bold;
-  font-size: 0.8rem;
-}
 
 .profile-image-container{
   display: flex; 
@@ -282,10 +210,6 @@ a {
   height: auto;
   object-fit: cover; /* Maintain aspect ratio and cover the circle */
   border-radius: 50%; /* Ensure the image is also circular */
-}
-
-.UsernameAndButton {
-  display: block;
 }
 
 .allAdsHomePage{
@@ -359,8 +283,5 @@ a {
       font-weight: bold;
       outline: 2px solid #000;
     }
-  }
-  .profileInfosContainer{
-    margin-left: 20px;
   }
 }

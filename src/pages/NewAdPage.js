@@ -1,19 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { doc, getDoc } from "firebase/firestore";
-
-import { db } from "../firebase";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
+import { listeGouvernerat } from "../components/Regions";
+import { liste_categories } from "../components/CategoriesHome";
 const NewAdPage = () => {
   const [err, setErr] = useState(false);
   const { isLoggedIn, login, logout, currentUser, userInfo } = useAuth();
   const [jsonData, setjsonData] = useState([]);
   const [lastObject, setLastObject] = useState({});
   const [lastAdID, setLastAdID] = useState(0);
-  const [newAd, setNewAd] = useState({});
   const db = getDatabase();
   const navigate = useNavigate();
+  const [selectedRegion, setSelectedRegion] = useState("Ariana");
+  const [selectedCategory, setSelectedCategory] = useState(
+    "Assistance personelle"
+  );
+
+  // Handle change
+  const handleRegionChange = (event) => {
+    setSelectedRegion(event.target.value);
+  };
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
   const writeUserData = (adJson) => {
     set(ref(db, "ads/" + adJson.idAnnonce), adJson);
   };
@@ -51,22 +61,24 @@ const NewAdPage = () => {
   useEffect(() => {
     console.log(userInfo);
   }, [userInfo]);
+
+  useEffect(() => {
+    console.log(selectedRegion);
+  }, [selectedRegion]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const titre = e.target[0].value;
-    const region = e.target[1].value;
-    const categorie = e.target[2].value;
-    const contenu = e.target[3].value;
-    const offre = e.target[4].value;
+    const contenu = e.target[1].value;
+    const offre = e.target[2].value;
     const nomEtPrenom = userInfo.nom + userInfo.prenom;
     const adJson = {
       title: titre,
       author: nomEtPrenom,
       author_uid: currentUser.uid,
-      region: region,
+      region: selectedRegion,
       offre: offre,
       serviceType: "Recherche de Service",
-      category: categorie,
+      category: selectedCategory,
       content: contenu,
       idAnnonce: lastAdID,
     };
@@ -88,10 +100,32 @@ const NewAdPage = () => {
             <span className="logo">Kolchayy.tn</span>
             <form onSubmit={handleSubmit}>
               <input required type="text" placeholder="Titre" />
-              <input required type="text" placeholder="Region" />
-              <input required type="text" placeholder="Categorie" />
-              <input required type="text" placeholder="Contenu" />
+              <input required type="text" placeholder="Contenu" height={100} />
               <input required type="text" placeholder="Prix" />
+              <label>
+                Categorie:
+                <select
+                  value={selectedCategory}
+                  onChange={handleCategoryChange}
+                  size="1"
+                >
+                  {liste_categories.map((item, index) => (
+                    <option>{item}</option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Region:
+                <select
+                  value={selectedRegion}
+                  onChange={handleRegionChange}
+                  size="1"
+                >
+                  {listeGouvernerat.map((item, index) => (
+                    <option>{item}</option>
+                  ))}
+                </select>
+              </label>
               <button>Add new ad</button>
               {err && <span>Something went wrong</span>}
             </form>
