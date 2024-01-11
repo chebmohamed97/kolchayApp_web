@@ -14,6 +14,7 @@ import NewAdPage from "./pages/NewAdPage";
 import ChatPage from "./pages/ChatPage";
 import PageRegion from "./pages/pageRegion";
 import NewHome from "./pages/newHomePage";
+import CategoryPage from "./pages/CategoryPage";
 function App() {
   return (
     <Router>
@@ -31,7 +32,7 @@ function App() {
           <Route path="/newad" element={<NewAdPage />} />
           <Route path="/chatpage" element={<ChatPage />} />
           <Route path="/:region" element={<PageRegion />} />
-          <Route path="/categories/:category" element={<Categories />} />
+          <Route path="/categories/:category" element={<CategoryPage />} />
           <Route path="/test" element={<NewHome />} />
         </Routes>
       </div>

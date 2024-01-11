@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/profileStyles.scss";
+import UpdateProfileImage from "../components/UpdateProfileImage";
 const Profile = () => {
   const { isLoggedIn, currentUser, userInfo } = useAuth();
 
@@ -15,13 +16,7 @@ const Profile = () => {
   return (
     <div>
       <div className="profileContainer">
-        <div className="profile-image-container">
-          <img
-            src={userInfo.photoURL}
-            alt="profileImg"
-            className="profile-image"
-          />
-        </div>
+        <UpdateProfileImage />
         <div className="profileInfosContainer">
           <h2> Informations generales</h2>
           <h1>Nom:</h1>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
-
+import "../styles/addButtonStyles.scss";
 export default function AddButton() {
   const { isLoggedIn, login, logout, currentUser } = useAuth();
   const navigate = useNavigate();
@@ -16,7 +16,14 @@ export default function AddButton() {
           +
         </a>
       ) : (
-        <p className="messageToLogin">You need to log in to add a new ad ! </p>
+        <div>
+          <p className="messageToLogin">
+            Vous pouvez poster votre annonce que si vous possedez un compte!
+          </p>
+          <a href="/login" className="messageToLogin">
+            Connectez vous ou creer un compte
+          </a>
+        </div>
       )}
     </div>
   );

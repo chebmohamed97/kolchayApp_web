@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
 import { listeGouvernerat } from "../components/Regions";
 import { liste_categories } from "../components/CategoriesHome";
+import "../styles/NewAdStyle.scss";
 const NewAdPage = () => {
   const [err, setErr] = useState(false);
   const { isLoggedIn, login, logout, currentUser, userInfo } = useAuth();
@@ -41,8 +42,6 @@ const NewAdPage = () => {
       .catch((error) => {
         console.error(error);
       });
-
-    console.log(currentUser);
   }, []);
 
   useEffect(() => {
@@ -58,13 +57,6 @@ const NewAdPage = () => {
     }
   }, [lastObject]);
 
-  useEffect(() => {
-    console.log(userInfo);
-  }, [userInfo]);
-
-  useEffect(() => {
-    console.log(selectedRegion);
-  }, [selectedRegion]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const titre = e.target[0].value;
@@ -100,7 +92,13 @@ const NewAdPage = () => {
             <span className="logo">Kolchayy.tn</span>
             <form onSubmit={handleSubmit}>
               <input required type="text" placeholder="Titre" />
-              <input required type="text" placeholder="Contenu" height={100} />
+              <input
+                required
+                type="text"
+                placeholder="Contenu"
+                height={100}
+                className="large-input"
+              />
               <input required type="text" placeholder="Prix" />
               <label>
                 Categorie:
@@ -110,7 +108,7 @@ const NewAdPage = () => {
                   size="1"
                 >
                   {liste_categories.map((item, index) => (
-                    <option>{item}</option>
+                    <option>{item} </option>
                   ))}
                 </select>
               </label>
@@ -126,8 +124,8 @@ const NewAdPage = () => {
                   ))}
                 </select>
               </label>
-              <button>Add new ad</button>
-              {err && <span>Something went wrong</span>}
+              <button>Postez votre annonce</button>
+              {err && <span>Une erreur s'est produite</span>}
             </form>
           </div>
         </div>

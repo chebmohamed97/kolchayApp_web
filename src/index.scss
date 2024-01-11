@@ -195,9 +195,12 @@ a {
 .messageToLogin{
   display: flex;
   justify-content: center; 
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
 }
 
 .profile-image-container{
@@ -206,8 +209,8 @@ a {
   align-items: center;
 }
 .profile-image {
-  width: auto; /* Make the image fill the circle */
-  height: auto;
+  height: 200px;
+  width: 200px;
   object-fit: cover; /* Maintain aspect ratio and cover the circle */
   border-radius: 50%; /* Ensure the image is also circular */
 }
@@ -252,7 +255,7 @@ a {
 }
 
 .newAdContainer{
-  margin-top: 30px;
+  margin-top: 100px;
 }
 
 .regionsContainer{
@@ -284,4 +287,17 @@ a {
       outline: 2px solid #000;
     }
   }
+
+}
+.categoriesPageContainer{
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 20px;
+  .categoryItemCategoryPage{
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
 }
