@@ -16,6 +16,7 @@ import PageRegion from "./pages/pageRegion";
 import TestPage from "./pages/testPage";
 import CategoryPage from "./pages/CategoryPage";
 import Footer from "./components/Footer";
+import MesAnnonces from "./pages/MesAnnonces";
 function App() {
   return (
     <Router>
@@ -35,6 +36,7 @@ function App() {
           <Route path="/:region" element={<PageRegion />} />
           <Route path="/categories/:category" element={<CategoryPage />} />
           <Route path="/test" element={<TestPage />} />
+          <Route path="/mesannonces" element={<MesAnnonces />} />
         </Routes>
       </div>
 

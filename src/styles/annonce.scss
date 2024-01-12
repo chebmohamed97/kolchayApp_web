@@ -31,6 +31,7 @@
 }
 .annonce{
     display: inline-block;
+    position:relative;
     color: #000;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -52,14 +53,82 @@
   .annonce:hover{
     cursor: pointer;
   }
+  .adBottomButtons{
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    font-size: 0.8rem;
+    .contacterAuteur{
+      display: inline-block;
+      color: #000;
+      margin-top: 20px;
+      margin-left: 10px;
+      border-radius: 30px;
+      background: #fff;
+      height: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      width:fit-content;
+      font-weight: bold;
+      outline: 4px solid #000;
+      text-decoration: none;
+    }
+    .contacterAuteur:hover{
+      background: #fff27f;
+    }
+    
+    .signalerAnnonce{
+      display: inline-block;
+      color: #000;
+      margin-top: 20px;
+      margin-left: 10px;
+      border-radius: 30px;
+      background: #fff;
+      height: 27px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      width:fit-content;
+      font-weight: bold;
+      outline: 4px solid #860000;
+    }
+    .priceDisplay{
+      padding-top: 25px;
+      padding-left: 10px;
+    }
+  }
+  
+  
+  .RegionDuService{
+    display: inline-block;
+    color: #000;
+    margin-top: 5px;
+    border-radius: 30px;
+    background: #fff;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width:fit-content;
+    font-weight: bold;
+    outline: 2px solid #000;
+  }
+  
+  
 
 
 .titreAnnonce{
   color: #000;
-  height: 23px;
+  height: fit-content;
   margin:10px 5px 2px;
-  width:95%;
-  font-size: 1.25rem;
+  width:100%;
+  font-size: 1.1rem;
   font-weight: bold;
   text-decoration: none;
   @include Smallwidth() {
@@ -142,73 +211,7 @@
   padding-right: 20px;
   margin-right: 10px;
   height:4rem;
-  max-height: 35%;
+  max-height: 22%;
   width: 100%;
   overflow:hidden;
 }
-
-.adBottomButtons{
-  display: flex;
-  font-size: 0.8rem;
-  .contacterAuteur{
-    display: inline-block;
-    color: #000;
-    margin-top: 20px;
-    margin-left: 10px;
-    border-radius: 30px;
-    background: #fff;
-    height: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    width:fit-content;
-    font-weight: bold;
-    outline: 4px solid #000;
-    text-decoration: none;
-  }
-  .contacterAuteur:hover{
-    background: #fff27f;
-  }
-  
-  .signalerAnnonce{
-    display: inline-block;
-    color: #000;
-    margin-top: 20px;
-    margin-left: 10px;
-    border-radius: 30px;
-    background: #fff;
-    height: 27px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    width:fit-content;
-    font-weight: bold;
-    outline: 4px solid #860000;
-  }
-  .priceDisplay{
-    padding-top: 25px;
-    padding-left: 10px;
-  }
-}
-
-
-.RegionDuService{
-  display: inline-block;
-  color: #000;
-  margin-top: 5px;
-  border-radius: 30px;
-  background: #fff;
-  height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width:fit-content;
-  font-weight: bold;
-  outline: 2px solid #000;
-}
-

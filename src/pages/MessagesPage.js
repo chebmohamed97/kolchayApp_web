@@ -1,23 +1,21 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import ChatsInPage from "../components/chat-components/ChatsInPage";
-import "../components/chat-components/styles.scss";
+import "../components/chat-components/stylesChat.scss";
 import { ChatContext } from "../contexts/ChatContext";
 import Chat from "../components/chat-components/Chat";
-
+import { useNavigate } from "react-router-dom";
 export default function TestPage() {
+  const navigate = useNavigate();
   const { data } = useContext(ChatContext);
-  const { isLoggedIn, currentUser } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   useEffect(() => {
     console.log(data.chatId);
   }, [data]);
+
   if (!isLoggedIn) {
-    return (
-      <div>
-        <h2>Log in to chat</h2>
-      </div>
-    );
+    navigate("/login");
   }
 
   return (

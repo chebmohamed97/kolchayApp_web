@@ -61,10 +61,6 @@ const NewAdPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target[0].value);
-    console.log(e.target[1].value);
-    console.log(e.target[2].value);
-    console.log(lastObject);
     const titre = e.target[0].value;
     const contenu = e.target[1].value;
     const offre = e.target[2].value;
@@ -96,7 +92,6 @@ const NewAdPage = () => {
       {isLoggedIn ? (
         <div className="formContainer">
           <div className="formWrapper">
-            <span className="logo">Kolchayy.tn</span>
             <form onSubmit={handleSubmit}>
               <input required type="text" placeholder="Titre" />
               <input

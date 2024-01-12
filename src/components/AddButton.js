@@ -9,19 +9,26 @@ export default function AddButton() {
   return (
     <div>
       {isLoggedIn ? (
-        <a
-          className="circle-container-new-ad"
-          onClick={() => navigate("/newad")}
-        >
-          +
-        </a>
+        <>
+          <div className="NewAdLinkContainer">
+            <a href="/newad" className="linkToPostNewAd">
+              POSTER UNE ANNONCE
+            </a>
+          </div>
+          <a
+            className="circle-container-new-ad"
+            onClick={() => navigate("/newad")}
+          >
+            +
+          </a>
+        </>
       ) : (
-        <div>
+        <div className="messageToLoginHomeContainer">
           <p className="messageToLogin">
             Vous pouvez poster votre annonce que si vous possedez un compte!
           </p>
-          <a href="/login" className="messageToLogin">
-            Connectez vous ou creer un compte
+          <a href="/login" className="linkToLogin">
+            Connectez vous ou créer un compte
           </a>
         </div>
       )}

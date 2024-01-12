@@ -89,6 +89,7 @@ body{
 .websiteHeader{
   display: flex;
   position: fixed;
+  z-index: 20;
   background-color: #fff;
   top: 0;
   left: 0;
@@ -114,8 +115,7 @@ body{
   }
 
   .topbar {
-    width: fit-content;
-    max-width: 60%;
+    width: 70%;
     background-color: #fff;
     margin-top: 40px;
     text-align: center;
@@ -124,37 +124,62 @@ body{
     transform: translateX(-50%);
     @include Smallwidth() {
       font-size: 13px;
+      width: 50%;
       height: 35px;
       overflow: hidden;
     }
     @include mobile(){
-      margin-top:15px
+      font-size: 1rem;
+      margin-top:25px;
     }
     .topbarItem{
       display: inline-flex;
       padding-left: 2px;
-      padding-right: padding-left;
+      padding-right: 5px;
       width: fit-content;
       border-radius: 20%;
+      font-weight: bold;
     }
     }
   }
 
 .profileIconTopRight{
   position: absolute;
-    top: 40px;
-    right: 50px;
+    top: 30px;
+    right: 60px;
     width: 20px;
     height: 20px;
     cursor: pointer;
     @include mobile(){
       top:15px;
-      right: 10px;
-      width: 50px;
-      height: 50px;
+      right: 25px;
+      width: 20px;
+      height: 20px;
     }
 }
 
+.profileIconClickWindowContainer{
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  border: 1px solid #000;
+  font-size: 1rem;
+  font-weight: bold;
+  width: fit-content;
+  height: fit-content;
+  background-color: lightgray;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: left;
+  @include mobile(){
+    top:60px;
+    right: 10px;
+  }
+}
+.profileMenuItem{
+  margin-bottom: 5px;
+  cursor: pointer;
+}
 
 
 .topbarItem:hover{
@@ -202,16 +227,7 @@ a {
   background-color: #720f0f;
 }
 
-.messageToLogin{
-  display: flex;
-  justify-content: center; 
-  text-align: center;
-  font-weight: bold;
-  margin-top: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 300px;
-}
+
 
 .profile-image-container{
   display: flex; 
@@ -241,6 +257,7 @@ a {
 .circle-container-new-ad {
   display: inline-block;
   position: fixed;
+  z-index: 20;
   align-items: center;
   justify-content: center;
   background-color: #720f0f;
@@ -264,9 +281,6 @@ a {
   cursor: pointer;
 }
 
-.newAdContainer{
-  margin-top: 100px;
-}
 
 .regionsContainer{
   .regions{
@@ -312,3 +326,58 @@ a {
 
 }
 
+.mesAnnoncesContainer{
+  margin-top: 20px;
+  padding-left: 20px;
+  min-height: 90vh;
+  .mesAnnoncesItem{
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.linkToLogin{
+  text-decoration: underline;
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+}
+
+.messageToLoginHomeContainer{
+  padding: 5px;
+  background-color: #ffdddd;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.messageToLogin{
+  display: flex;
+  justify-content: center; 
+  text-align: center;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+}
+
+.linkToPostNewAd{
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  justify-content: center; 
+  font-weight: bold;
+}
+
+.NewAdLinkContainer{
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #820000;
+  color: white;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  width: fit-content;
+  border-radius: 5px;
+}
