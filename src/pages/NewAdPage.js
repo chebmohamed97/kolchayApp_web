@@ -34,7 +34,9 @@ const NewAdPage = () => {
     get(child(dbRef, `ads/`))
       .then((snapshot) => {
         if (snapshot.exists()) {
-          setjsonData(snapshot.val());
+          const data = snapshot.val();
+          const dataArray = Object.keys(data).map((key) => data[key]);
+          setjsonData(dataArray);
         } else {
           console.log("No data available");
         }
@@ -59,6 +61,10 @@ const NewAdPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(e.target[0].value);
+    console.log(e.target[1].value);
+    console.log(e.target[2].value);
+    console.log(lastObject);
     const titre = e.target[0].value;
     const contenu = e.target[1].value;
     const offre = e.target[2].value;
@@ -80,6 +86,7 @@ const NewAdPage = () => {
       writeUserData(adJson);
       navigate(`/annonce/${adJson.idAnnonce}`);
     } catch (error) {
+      console.log(error);
       setErr(true);
     }
   };

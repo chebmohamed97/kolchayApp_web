@@ -1,0 +1,16 @@
+h3{
+  text-align: center;
+}
+.container{
+  width: 100vw;
+  display: block;
+  align-items: center;
+
+  .adsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: center;
+  }
+}

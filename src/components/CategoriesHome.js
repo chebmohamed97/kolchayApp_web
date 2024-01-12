@@ -17,10 +17,13 @@ export const liste_categories = [
 ];
 export default function CategoriesHome() {
   return (
-    <div className="regions">
-      {liste_categories.map((item, index) => (
-        <CategorieHomeItem key={index} category={item} />
-      ))}
+    <div className="regionsContainer">
+      <p className="boldCenteredText">Choisissez la categorie</p>
+      <div className="regions">
+        {liste_categories.map((item, index) => (
+          <CategorieHomeItem key={index} category={item} />
+        ))}
+      </div>
     </div>
   );
 }

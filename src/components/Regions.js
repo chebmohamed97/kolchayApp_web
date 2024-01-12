@@ -29,10 +29,13 @@ export const listeGouvernerat = [
 ];
 export default function Regions() {
   return (
-    <div className="regions">
-      {listeGouvernerat.map((item, index) => (
-        <RegionItem key={index} gouvernerat={item} />
-      ))}
+    <div className="regionsContainer">
+      <p className="boldCenteredText">Choisissez votre ville</p>
+      <div className="regions">
+        {listeGouvernerat.map((item, index) => (
+          <RegionItem key={index} gouvernerat={item} />
+        ))}
+      </div>
     </div>
   );
 }

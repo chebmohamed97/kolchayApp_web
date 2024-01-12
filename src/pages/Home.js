@@ -9,15 +9,8 @@ const Home = () => {
     <div>
       <Banner />
       <AddButton />
-      <p className="boldCenteredText">Choisissez votre ville</p>
-      <div className="regionsContainer">
-        <Regions />
-      </div>
-      <p className="boldCenteredText">Choisissez la categorie</p>
-      <div className="regionsContainer">
-        <CategoriesHome />
-      </div>
-      <p className="boldCenteredText">Annonces publié récemment</p>
+      <Regions />
+      <CategoriesHome />
       <RecentAdsHome />
     </div>
   );

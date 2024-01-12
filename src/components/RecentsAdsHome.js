@@ -23,12 +23,17 @@ export default function RecentAdsHome() {
       });
   }, []);
   return (
-    <div className="allAdsHomePage">
-      {jsonData.length === 0 ? (
-        <></>
-      ) : (
-        jsonData.map((item) => <Annonce key={item.idAnnonce} item={item} />)
-      )}
+    <div>
+      <div>
+        <p className="boldCenteredText">Annonces publié récemment</p>
+      </div>
+      <div className="allAdsHomePage">
+        {jsonData.length === 0 ? (
+          <></>
+        ) : (
+          jsonData.map((item) => <Annonce key={item.idAnnonce} item={item} />)
+        )}
+      </div>
     </div>
   );
 }

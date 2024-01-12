@@ -13,8 +13,9 @@ import LogoutPage from "./pages/LogoutPage";
 import NewAdPage from "./pages/NewAdPage";
 import ChatPage from "./pages/ChatPage";
 import PageRegion from "./pages/pageRegion";
-import NewHome from "./pages/newHomePage";
+import TestPage from "./pages/testPage";
 import CategoryPage from "./pages/CategoryPage";
+import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
@@ -27,15 +28,17 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/Categories" element={<Categories />} />
           <Route path="/annonce/:id" element={<PageAnnonce />} />
-          <Route path="/messages" element={<ChatPage />} />
+          <Route path="/messages" element={<MessagesPage />} />
           <Route path="/logout" element={<LogoutPage />} />
           <Route path="/newad" element={<NewAdPage />} />
           <Route path="/chatpage" element={<ChatPage />} />
           <Route path="/:region" element={<PageRegion />} />
           <Route path="/categories/:category" element={<CategoryPage />} />
-          <Route path="/test" element={<NewHome />} />
+          <Route path="/test" element={<TestPage />} />
         </Routes>
       </div>
+
+      <Footer />
     </Router>
   );
 }

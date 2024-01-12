@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { json, useParams } from "react-router-dom";
 import { getDatabase, ref, child, get } from "firebase/database";
 import Annonce from "../components/annonce";
+import "../styles/pageCategory.scss";
 const database = getDatabase();
 
 const CategoryPage = () => {
@@ -31,11 +32,11 @@ const CategoryPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <div>
         <h3> {category} </h3>
       </div>
-      <div className="allAdsHomePage">
+      <div className="adsContainer">
         {jsonData.length === 0 ? (
           <p> Desole mais y'a pas d'annonces dans cette categorie ! </p>
         ) : (

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { json, useParams } from "react-router-dom";
 import { getDatabase, ref, child, get } from "firebase/database";
 import Annonce from "../components/annonce";
+import "../styles/pageRegion.scss";
 const database = getDatabase();
 
 const PageRegion = () => {
@@ -15,7 +16,11 @@ const PageRegion = () => {
       .then((snapshot) => {
         if (snapshot.exists()) {
           const data = snapshot.val();
-          const filteredData = data.filter((item) => item.region === region);
+          // Convert the object into an array of its values
+          const dataArray = Object.values(data);
+          const filteredData = dataArray.filter(
+            (item) => item.region === region
+          );
           setjsonData(filteredData);
         } else {
           console.log("No data available");
@@ -27,11 +32,9 @@ const PageRegion = () => {
   }, []);
 
   return (
-    <div>
-      <div>
-        <p> {region} </p>
-      </div>
-      <div className="allAdsHomePage">
+    <div className="container">
+      <h3> {region} </h3>
+      <div className="adsContainer">
         {jsonData.length === 0 ? (
           <p> On a pas trouve d'annonces dans votre region ! </p>
         ) : (
