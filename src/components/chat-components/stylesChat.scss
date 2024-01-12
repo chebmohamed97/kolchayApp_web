@@ -23,6 +23,7 @@
     margin-left: auto;
     margin-right:auto;
     justify-content: center;
+    text-align: left;
     @include mobile(){
         width: 100vw;
     }

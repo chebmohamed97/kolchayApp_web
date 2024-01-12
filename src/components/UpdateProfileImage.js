@@ -12,6 +12,7 @@ export default function UpdateProfileImage() {
   const date = new Date().getTime();
   const storageRef = ref(storage, `${currentUser.displayName + date}`);
   const [file, setFile] = useState(null);
+  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
 
   const updateImageInFirestore = async (downloadURL) => {
     const photoRef = doc(db, "users", currentUser.uid);
@@ -31,6 +32,7 @@ export default function UpdateProfileImage() {
           });
           updateImageInFirestore(downloadURL);
           console.log("Updated user image");
+          setShowSuccessMsg(true);
         } catch (err) {
           console.log(err);
           setErr(true);
@@ -63,6 +65,11 @@ export default function UpdateProfileImage() {
         <p className="changePhotoText"> Changer la photo de votre profil</p>
         <input type="file" onChange={handleImageChange} />
       </div>
+      {showSuccessMsg ? (
+        <p className="changePhotoText">La photo a ete change avec succes ! </p>
+      ) : (
+        <></>
+      )}
       {err && <span>Une erreur s'est produite</span>}
     </div>
   );
