@@ -61,7 +61,9 @@ export default function ProfileIconHeader() {
               Se deconnecter
             </div>
           ) : (
-            <div onClick={navigateToLogin}>Se connecter</div>
+            <div className="profileMenuItem" onClick={navigateToLogin}>
+              Se connecter
+            </div>
           )}
         </div>
       ) : (

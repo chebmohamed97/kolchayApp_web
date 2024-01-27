@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Categories from "./pages/Categories";
-import Profile from "./pages/Profile";
+import CategoriesListPage from "./pages/CategoriesListPage";
+import MyProfilePage from "./pages/MyProfilePage";
 import Login from "./pages/Login";
 import PageAnnonce from "./pages/pageAnnonce";
 import Register from "./pages/Register";
@@ -17,17 +17,19 @@ import TestPage from "./pages/testPage";
 import CategoryPage from "./pages/CategoryPage";
 import Footer from "./components/Footer";
 import MesAnnonces from "./pages/MesAnnonces";
+import UserProfilePage from "./pages/UserProfilePage";
+
 function App() {
   return (
     <Router>
-      <WebsiteHeader />
-      <div className="container">
+      <div className="appContainer">
+        <WebsiteHeader />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/Categories" element={<Categories />} />
+          <Route path="/profile" element={<MyProfilePage />} />
+          <Route path="/Categories" element={<CategoriesListPage />} />
           <Route path="/annonce/:id" element={<PageAnnonce />} />
           <Route path="/messages" element={<MessagesPage />} />
           <Route path="/logout" element={<LogoutPage />} />
@@ -37,6 +39,10 @@ function App() {
           <Route path="/categories/:category" element={<CategoryPage />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="/mesannonces" element={<MesAnnonces />} />
+          <Route
+            path="/profile/:userDisplayName"
+            element={<UserProfilePage />}
+          />
         </Routes>
       </div>
 

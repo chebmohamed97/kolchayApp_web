@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { json, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getDatabase, ref, child, get } from "firebase/database";
-import Annonce from "../components/annonce";
+import Annonce from "../components/Annonce";
 import "../styles/pageRegion.scss";
 const database = getDatabase();
 

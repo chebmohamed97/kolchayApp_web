@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 
 export default function CategorieHomeItem({ category }) {
-  useEffect(() => {
-    console.log(category);
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className="regionItem">
       {category.hasOwnProperty("icon") ? (

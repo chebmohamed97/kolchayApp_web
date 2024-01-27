@@ -5,6 +5,13 @@ import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
 import { listeGouvernerat } from "../components/Regions";
 import { liste_categories } from "../components/CategoriesHome";
 import "../styles/NewAdStyle.scss";
+import {
+  arrayUnion,
+  doc,
+  serverTimestamp,
+  Timestamp,
+  updateDoc,
+} from "firebase/firestore";
 const NewAdPage = () => {
   const [err, setErr] = useState(false);
   const { isLoggedIn, login, logout, currentUser, userInfo } = useAuth();
@@ -75,6 +82,7 @@ const NewAdPage = () => {
       category: selectedCategory,
       content: contenu,
       idAnnonce: lastAdID,
+      date_of_publishing: Timestamp.now(),
     };
 
     console.log(adJson);
@@ -110,7 +118,7 @@ const NewAdPage = () => {
                   size="1"
                 >
                   {liste_categories.map((item, index) => (
-                    <option>{item} </option>
+                    <option key={index}>{item}</option>
                   ))}
                 </select>
               </label>
@@ -122,7 +130,7 @@ const NewAdPage = () => {
                   size="1"
                 >
                   {listeGouvernerat.map((item, index) => (
-                    <option>{item}</option>
+                    <option key={index}>{item}</option>
                   ))}
                 </select>
               </label>

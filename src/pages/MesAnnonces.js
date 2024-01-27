@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { getDatabase, ref, child, get } from "firebase/database";
 import { useAuth } from "../contexts/AuthContext";
+import Annonce from "../components/Annonce";
 const MesAnnonces = () => {
   const { currentUser } = useAuth();
   const [jsonData, setjsonData] = useState([]);
@@ -12,8 +13,10 @@ const MesAnnonces = () => {
       .then((snapshot) => {
         if (snapshot.exists()) {
           const data = snapshot.val();
+
           // Convert the object into an array of its values
           const dataArray = Object.values(data);
+          dataArray.reverse();
           const filteredData = dataArray.filter(
             (item) => item.author_uid === currentUser.uid
           );
@@ -33,11 +36,7 @@ const MesAnnonces = () => {
       <h3>Mes Annonces</h3>
       <div className="mesAnnoncesContainer">
         {jsonData.map((item) => (
-          <div key={item.idAnnonce} className="mesAnnoncesItem">
-            <a href={`/annonce/${item.idAnnonce}`}>
-              ID: {item.idAnnonce} - {item.title}
-            </a>
-          </div>
+          <Annonce key={item.idAnnonce} item={item} />
         ))}
       </div>
     </div>

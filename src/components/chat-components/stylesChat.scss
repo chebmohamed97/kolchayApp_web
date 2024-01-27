@@ -48,11 +48,13 @@
           justify-content: space-between;
           color: #ddddf7;
         }
+
+        
         .search {
-          border: 3px solid rgb(0, 0, 0);
-          border-radius: 10px;
+          border-bottom: 3px solid rgb(0, 0, 0);
           margin-bottom: 20px;
           background-color: #fff;
+          width: 100%;
   
           .searchForm {
             padding: 10px;
@@ -74,7 +76,7 @@
         .userChat {
             border-bottom: 1px solid rgb(0, 0, 0);
             padding: 10px;
-            height: 80px;
+            height: 60px;
             gap: 10px;
             color: black;
             margin-bottom: 0px;
@@ -83,7 +85,13 @@
             &:hover {
                 background-color: lightcoral;
             }
-
+            img {
+              background-color: #ddddf7;
+              height: 24px;
+              width: 24px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
     
             .userChatInfo {
                 span {

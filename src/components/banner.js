@@ -1,10 +1,10 @@
 import React from "react";
-import banner from "../images/banner.png";
+import banner from "../assets/banner.png";
 
 const Banner = () => {
   return (
     <div className="banner">
-      <img src={banner} alt="Banner Image" className="banner-image" />
+      <img src={banner} alt="Banner" className="banner-image" />
     </div>
   );
 };

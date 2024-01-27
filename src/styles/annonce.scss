@@ -42,8 +42,9 @@
     padding: 5px;
     width: 350px;
     font-size: 14px;
-    height: 240px;
+    height: 200px;
     max-height: 300px;
+    max-width: 90vw;
     outline: 4px solid #000;
     @include max-377px() {
       width: 95%
@@ -53,56 +54,35 @@
   .annonce:hover{
     cursor: pointer;
   }
-  .adBottomButtons{
-    position: absolute;
-    bottom: 0px;
+  .annonceHeader{
     display: flex;
-    font-size: 0.8rem;
-    .contacterAuteur{
-      display: inline-block;
-      color: #000;
-      margin-top: 20px;
-      margin-left: 10px;
-      border-radius: 30px;
-      background: #fff;
-      height: auto;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
-      width:fit-content;
-      font-weight: bold;
-      outline: 4px solid #000;
-      text-decoration: none;
+    .UserImageAnnonce{
+      width:35px;
+      height:35px;
+      border-radius: 50px;
+      margin-left: 5px;
+      margin-top: 5px;
+      
     }
-    .contacterAuteur:hover{
-      background: #fff27f;
+    .nameOfAuthorAd{
+        margin-top: 15px;
+        margin-left: 10px;
+        font-weight: 700;
     }
-    
-    .signalerAnnonce{
-      display: inline-block;
-      color: #000;
-      margin-top: 20px;
-      margin-left: 10px;
-      border-radius: 30px;
-      background: #fff;
-      height: 27px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
-      width:fit-content;
-      font-weight: bold;
-      outline: 4px solid #860000;
-    }
-    .priceDisplay{
-      padding-top: 25px;
-      padding-left: 10px;
+    .timeOfPublishingAd{
+      margin-top: 15px;
+        margin-left: 3px;
     }
   }
   
+
+  .priceDisplay{
+    position: absolute;
+    bottom: 15px;
+    padding-left: 10px;
+    color: #860000;
+    font-weight: bold;
+  }
   
   .RegionDuService{
     display: inline-block;
@@ -127,10 +107,13 @@
   color: #000;
   height: fit-content;
   margin:10px 5px 2px;
-  width:100%;
+  width:95%;
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   @include Smallwidth() {
     font-size: 6vw;
   }
@@ -145,7 +128,7 @@
   height: auto;
   max-height: 65px;
   overflow: hidden;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   @include verySmallwidth() {
     font-size: 5vw;
   }
@@ -210,8 +193,10 @@
   margin-left: 10px;
   padding-right: 20px;
   margin-right: 10px;
-  height:4rem;
+  height:1rem;
   max-height: 22%;
-  width: 100%;
-  overflow:hidden;
+  width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

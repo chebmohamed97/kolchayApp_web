@@ -1,6 +1,6 @@
 import React from "react";
 import Topbar from "./topbar";
-import logo from "../images/KC_logo_white_bg.png";
+import logo from "../assets/KC_logo_white_bg.png";
 import ProfileIconHeader from "./ProfileIconHeader";
 import { useNavigate } from "react-router-dom";
 export default function WebsiteHeader() {
@@ -15,7 +15,6 @@ export default function WebsiteHeader() {
       </div>
 
       <Topbar />
-      {/*<LogInStatus />*/}
       <ProfileIconHeader />
     </div>
   );

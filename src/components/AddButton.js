@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
-import { getDatabase, ref, set, onValue, child, get } from "firebase/database";
+import { useNavigate } from "react-router-dom";
 import "../styles/addButtonStyles.scss";
 export default function AddButton() {
   const { isLoggedIn, login, logout, currentUser } = useAuth();

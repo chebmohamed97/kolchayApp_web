@@ -4,28 +4,85 @@
     }
   }
 .infoAnnonceContainer{
-    width: fit-content;
-    max-width: 1000px;
-    padding-top: 20px;
-    max-width: 500px;
-    margin-left: 25vw;
-    margin-right: 25vw;
+    width: 100%;
+    
     @include mobile(){
+      height: fit-content;
         margin-left: 5vw;
         margin-right: 5vw;
       }
     .adContentText{
+      width: 90%;
         margin-bottom: 50px;
+        overflow-wrap: break-word;
     }
     .adTitel{
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 5px;
+      width: 90%;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      overflow-wrap: break-word;
     }
     .adSubTitel{
-        font-size: 1rem;
-        font-weight: bold;
-        margin-top: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    
+  }
+
+  .adBottomButtons{
+    display: flex;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    width:fit-content;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    .contacterAuteur{
+      color: #000;
+      margin-top: 20px;
+      margin-left: 10px;
+      border-radius: 30px;
+      background: #fff;
+      height: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      width:fit-content;
+      max-width: 55%;
+      font-weight: bold;
+      outline: 4px solid #000;
+      text-decoration: none;
+      white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    }
+    .contacterAuteur:hover{
+      background: #fff27f;
+    }
+    
+    .signalerAnnonce{
+      color: #000;
+      margin-top: 20px;
+      margin-left: 15px;
+      border-radius: 30px;
+      background: #fff;
+      height: 27px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      width:fit-content;
+      font-weight: bold;
+      outline: 4px solid #860000;
+      white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
     }
     
   }

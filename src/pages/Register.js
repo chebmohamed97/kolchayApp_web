@@ -11,7 +11,8 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 
 const Register = () => {
-  const downloadURL = "https://source.unsplash.com/random/200x200";
+  const downloadURL =
+    "https://www.gravatar.com/avatar/00000000000000000000000000000000?s=200&d=mp&r=g";
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showMessage, setShowMessage] = useState(0);
