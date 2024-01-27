@@ -2,61 +2,13 @@ import "../styles/profileStyles.scss";
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { FetchUserDataByDisplayName } from "../utils/fetchDataFunctions.js";
-import { useAuth } from "../contexts/AuthContext";
-import {
-  setDoc,
-  doc,
-  updateDoc,
-  serverTimestamp,
-  getDoc,
-} from "firebase/firestore";
-import { useNavigate, Link } from "react-router-dom";
-import { db } from "../firebase";
-
+import { useNavigate } from "react-router-dom";
+import ContactButton from "../components/ContactButton.js";
 export default function UserProfilePage() {
   const { userDisplayName } = useParams();
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
-  const { isLoggedIn, currentUser, userInfo } = useAuth();
 
-  const handleSelect = async () => {
-    //check whether the group(chats in firestore) exists, if not create
-    const combinedId =
-      currentUser.uid > userData.uid
-        ? currentUser.uid + userData.uid
-        : userData.uid + currentUser.uid;
-    console.log(combinedId);
-    try {
-      const res = await getDoc(doc(db, "chats", combinedId));
-
-      if (!res.exists()) {
-        //create a chat in chats collection
-        await setDoc(doc(db, "chats", combinedId), { messages: [] });
-
-        //create user chats
-        await updateDoc(doc(db, "userChats", currentUser.uid), {
-          [combinedId + ".userInfo"]: {
-            uid: userData.uid,
-            displayName: userData.displayName,
-            photoURL: userData.photoURL,
-          },
-          [combinedId + ".date"]: serverTimestamp(),
-        });
-
-        await updateDoc(doc(db, "userChats", userData.uid), {
-          [combinedId + ".userInfo"]: {
-            uid: currentUser.uid,
-            displayName: currentUser.displayName,
-            photoURL: currentUser.photoURL,
-          },
-          [combinedId + ".date"]: serverTimestamp(),
-        });
-      }
-      navigate("/messages");
-    } catch (err) {
-      console.log("Error 1");
-    }
-  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -72,12 +24,7 @@ export default function UserProfilePage() {
 
   return (
     <div className="profilePageContainer">
-      <div className="adBottomButtons">
-        <a onClick={handleSelect} className="contacterAuteur">
-          Contacter {userData.displayName}
-        </a>
-        <div className="signalerAnnonce">{"Signaler"}</div>
-      </div>
+      <ContactButton userData={userData} />
       <div className="profileContainer">
         <div className="profile-image-container">
           <img
