@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { getDatabase, ref, child, get } from "firebase/database";
 import { useAuth } from "../contexts/AuthContext";
 import Annonce from "../components/Annonce";
+import AddButton from "../components/AddButton";
+
 const MesAnnonces = () => {
   const { currentUser } = useAuth();
   const [jsonData, setjsonData] = useState([]);
@@ -34,11 +36,19 @@ const MesAnnonces = () => {
   return (
     <div>
       <h3>Mes Annonces</h3>
-      <div className="mesAnnoncesContainer">
-        {jsonData.map((item) => (
-          <Annonce key={item.idAnnonce} item={item} />
-        ))}
-      </div>
+      <AddButton />
+      {jsonData.length === 0 ? (
+        <div className="boldCenteredText">
+          {" "}
+          Vous avez posté aucune annonce !{" "}
+        </div>
+      ) : (
+        <div className="mesAnnoncesContainer">
+          {jsonData.map((item) => (
+            <Annonce key={item.idAnnonce} item={item} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

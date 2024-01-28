@@ -43,6 +43,7 @@ export const AuthProvider = ({ children }) => {
       console.error(error);
     }
   };
+
   // Update local storage when login state changes
   useEffect(() => {
     localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));

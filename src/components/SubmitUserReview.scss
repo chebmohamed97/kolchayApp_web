@@ -1,0 +1,38 @@
+.SubmitUserReviewContainer{
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid #720f0f;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+.star{
+    cursor:pointer
+}
+.starsRatingBox{
+    display: flex;
+    .starsRatingText{
+        margin-top: 5px;
+        margin-right: 7px;
+    }
+}
+
+.inputCommentaire{
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.submitReviewButton{
+    margin-top: 10px;
+    padding: 5px;
+    height: fit-content;
+    width: fit-content;
+}

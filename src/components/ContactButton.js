@@ -27,6 +27,7 @@ export default function ContactButton(data) {
 
       if (!res.exists()) {
         //create a chat in chats collection
+        console.log("exists");
         await setDoc(doc(db, "chats", combinedId), { messages: [] });
 
         //create user chats
@@ -48,7 +49,8 @@ export default function ContactButton(data) {
           [combinedId + ".date"]: serverTimestamp(),
         });
       }
-      navigate("/messages");
+      console.log(combinedId);
+      navigate("/messages", { state: { userData, combinedId } });
     } catch (err) {
       console.log("Error 1");
     }

@@ -5,12 +5,12 @@ import { useAuth } from "../contexts/AuthContext";
 
 export default function ProfileIconHeader() {
   const navigate = useNavigate();
-  const { isLoggedIn, logout } = useAuth();
+  const { isLoggedIn, logout, currentUser } = useAuth();
   const [showWindow, setShowWindow] = useState(false);
 
   const navigateToProfile = () => {
     if (isLoggedIn) {
-      navigate("/profile");
+      navigate(`/profile/${currentUser.displayName}`);
       toggleWindow();
     } else {
       navigate("/login");

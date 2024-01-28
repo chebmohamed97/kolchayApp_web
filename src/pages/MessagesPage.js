@@ -4,15 +4,29 @@ import ChatsInPage from "../components/chat-components/ChatsInPage";
 import "../components/chat-components/stylesChat.scss";
 import { ChatContext } from "../contexts/ChatContext";
 import Chat from "../components/chat-components/Chat";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
 export default function TestPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const userData = location.state?.userData;
+  const combinedId = location.state?.combinedId;
   const { data } = useContext(ChatContext);
-  const { isLoggedIn } = useAuth();
+  const { dispatch } = useContext(ChatContext);
+  const { isLoggedIn, currentUser, userInfo } = useAuth();
 
   useEffect(() => {
+    if (userData && combinedId) {
+      const payload = {
+        uid: userData.uid,
+        displayName: userData.displayName,
+        photoURL: userData.photoURL,
+      };
+      dispatch({ type: "CHANGE_USER", payload: payload });
+    }
+
     console.log(data.chatId);
-  }, [data]);
+  }, []);
 
   if (!isLoggedIn) {
     navigate("/login");

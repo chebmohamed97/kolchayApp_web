@@ -73,6 +73,18 @@ body{
   text-align: center;
 }
 
+.footer{
+  font-size: 0.7rem;
+  height: fit-content;
+  text-align: center;
+  padding: 5px;
+  background-color: #f8f9fa;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw
+}
+
 
 .appContainer{
   background-color: #fff;
@@ -284,7 +296,7 @@ a {
   align-items: center;
   justify-content: center;
   background-color: #720f0f;
-  bottom: 4%; /* Set to 50% to position it in the middle of the screen's height */
+  bottom: 6%; /* Set to 50% to position it in the middle of the screen's height */
   right: 47%; /* Set to 50% to center it horizontally */
   transform: translate(-50%, 50%); /* Adjust the position based on element's size */
   width: 50px;
@@ -298,8 +310,8 @@ a {
   overflow: hidden;
   outline: 3px solid #720f0f;
   @include laptop{
-    bottom: 4%; /* Set to 50% to position it in the middle of the screen's height */
-    right: 0%; /* Set to 50% to center it horizontally */
+    bottom: 6%; /* Set to 50% to position it in the middle of the screen's height */
+    left: 90%; /* Set to 50% to center it horizontally */
   }
 }
 

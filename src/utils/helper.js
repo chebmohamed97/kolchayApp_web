@@ -18,3 +18,7 @@ export default function getTimeSincePublishing(timeOfPublishingAdseconds) {
   }
   return <p> a publie il y'a {seconds_since_publishing} secondes </p>;
 }
+
+export function CapitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}

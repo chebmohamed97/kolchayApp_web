@@ -5,8 +5,8 @@
   }
 
 h2{
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 h1{
@@ -58,4 +58,102 @@ h3{
     max-width: 95vw;
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+.ratingInfo{
+    display: flex;
+    margin-bottom: 5px;
+    
+    .starIcon{
+        size:20; 
+        color: gold;
+        margin-right: 10px;
+    }
+    .ratingContent{
+        margin-left: 10px;
+    }
+}
+
+.tasksDoneInfo{
+    display: flex;
+    margin-bottom: 5px;
+    .taskIcon{
+        size:20; 
+        color: black;
+        margin-right: 10px;
+    }
+    .tasksDoneContent{
+        margin-left: 10px;
+    }
+}
+
+.drivingPermitInfo{
+    display: flex;
+    margin-bottom: 5px;
+    .drivingPermitIcon{
+        size:20; 
+        color: black;
+        margin-right: 10px;
+    }
+    .drivingPermitContent{
+        margin-left: 10px;
+    }
+}
+
+.carInfo{
+    display: flex;
+    margin-bottom: 5px;
+    .carIcon{
+        size:20; 
+        color: black;
+        margin-right: 10px;
+    }
+    .carInfoContent{
+        margin-left: 10px;
+    }
+}
+
+.toolsInfo{
+    display: flex;
+    margin-bottom: 5px;
+    .toolsIcon{
+        size:20; 
+        color: black;
+        margin-right: 10px;
+    }
+    .toolsInfoContent{
+        margin-left: 10px;
+    }
+}
+
+.nameInfo{
+    display: flex;
+    margin-bottom: 5px;
+    .nameInfoContent{
+        margin-left: 10px;
+    }
+}
+
+.firstNameInfo{
+    display: flex;
+    margin-bottom: 5px;
+    .firstNameInfoContent{
+        margin-left: 10px;
+    }
+}
+
+.displayNameInfo{
+    display: flex;
+    margin-bottom: 5px;
+    .displayNameInfoContent{
+        margin-left: 10px;
+    }
+}
+
+.emailInfo{
+    display: flex;
+    margin-bottom: 5px;
+    .emailInfoContent{
+        margin-left: 10px;
+    }
 }

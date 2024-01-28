@@ -9,6 +9,7 @@ import {
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
+import { CapitalizeFirstLetter } from "../utils/helper";
 
 const Register = () => {
   const downloadURL =
@@ -31,9 +32,9 @@ const Register = () => {
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const nom = e.target[0].value;
-    const prenom = e.target[1].value;
-    const displayName = e.target[2].value;
+    const nom = CapitalizeFirstLetter(e.target[0].value);
+    const prenom = CapitalizeFirstLetter(e.target[1].value);
+    const displayName = CapitalizeFirstLetter(e.target[2].value);
     const email = e.target[3].value;
     const password = e.target[4].value;
 
@@ -93,7 +94,6 @@ const Register = () => {
       return <span>Probleme survenu !</span>;
     }
   };
-  console.log(err);
   return (
     <div className="formContainer">
       <div className="formWrapper">
